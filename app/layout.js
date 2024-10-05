@@ -1,6 +1,6 @@
 import localFont from "next/font/local";
 import { Fugaz_One, Open_Sans } from 'next/font/google';
-
+import { AuthProvider } from "@/context/AuthContext";
 import "./globals.css";
 import Link from "next/link";
 
@@ -32,13 +32,15 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      <body
-        className={` w-full max-w-[1000px] mx-auto text-sm sm:text-base min-h-screen flex flex-col text-slate-800 ${opensans.className} antialiased`}
-      >
-        {header} 
-        {children}
-        {footer}
-      </body>
+      <AuthProvider>
+        <body
+          className={` w-full max-w-[1000px] mx-auto text-sm sm:text-base min-h-screen flex flex-col text-slate-800 ${opensans.className} antialiased`}
+        >
+          {header} 
+          {children}
+          {footer}
+        </body>
+      </AuthProvider>
     </html>
   );
 }
