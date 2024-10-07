@@ -12,11 +12,18 @@ const dayList = ['Sunday', 'Monday', 'Tuesday', 'Wednesday',
   'Thursday', 'Friday', 'Saturday'];
 
 export default function Calendar(props) {
+  const { demo, completeData, handleSetMood } = props
+  
   const now = new Date()
   const currMonth = now.getMonth()
   const [selectedMonth, setSelectMonth] = useState(Object.keys(months)[currMonth])
   const [selectedYear, setSelectedYear] = useState(now.getFullYear())
   
+  console.log("complateData: ", completeData)
+  
+  const numericMonth = Object.keys(months).indexOf(selectedMonth)
+  const data = completeData?.[selectedYear]?.[numericMonth] || {}
+  console.log("ss: ", completeData?.[selectedYear]?.[numericMonth])
   function handleIncrementMonth(val) {
     //+1 -1
     /*if we hit bounds of the months, \then we can just adjust year 
@@ -24,7 +31,6 @@ export default function Calendar(props) {
   }
 
   console.log(`SELECTED MONTH: ${selectedMonth}`)
-  const { demo, data, handleSetMood } = props
   // const year = 2024;
   // const month = "July";
   const monthNow = new Date(selectedYear, Object.keys(months).indexOf(selectedMonth), 1)
@@ -55,12 +61,17 @@ export default function Calendar(props) {
                 )
               }
 
-              let color = demo ? 
-                gradients.indigo[baseRating[dayIndex]] : 
-                (data && dayIndex in data) ?  // Check if 'data' is defined before using 'in'
-                gradients.indigo[data[dayIndex]] :
-                "white";
+              // let color = demo ? 
+              //   gradients.indigo[baseRating[dayIndex]] : 
+              //   (data && dayIndex in data) ?  // Check if 'data' is defined before using 'in'
+              //   gradients.indigo[data[dayIndex]] :
+              //   "white";
 
+              let color = demo ?
+              gradients.indigo[baseRating[dayIndex]] :
+              dayIndex in data ?
+                  gradients.indigo[data[dayIndex]] :
+                  'white'
 
               return(
                 <div style={{background: color}} className={'text-xs sm:text-sm border  \

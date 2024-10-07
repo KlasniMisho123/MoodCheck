@@ -2,6 +2,8 @@
 import React, { useState } from 'react'
 import { Fugaz_One } from 'next/font/google';
 import Button from './Button';
+import { useAuth } from '@/context/AuthContext';
+
 
 const fugaz = Fugaz_One({ subsets: ["latin"], weight: ["400"] });
 
@@ -9,17 +11,30 @@ export default function Login() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [isRegister, setIsRegister] = useState(false)
+  const [authenticating, setAuthenticating] = useState(false)
+  const { signup, login } = useAuth()
 
   async  function handleSubmit() {
     if(!email || !password || password.length < 6 ) {
       return
     }
 
-    if(isRegister) {
-      console.log("signing up a new user")
-    } else {
-      console.log("Logging in exsisting user")
+    setAuthenticating(true)
+    try {
+      if(isRegister) {
+        console.log("signing up a new user")
+        await signup(email, password)
+      } else {
+        console.log("Logging in exsisting user")
+        await login(email, password)
+      } 
+    } catch(err) {
+      //error message for clients - **
+      console.log(err.message)
+    } finally {
+      setAuthenticating(false)
     }
+      
   }
 
   return (
@@ -41,7 +56,7 @@ export default function Login() {
       }}
       />
       <div className=' max-w-[400px] w-full mx-auto '>
-        <Button text='Submit' full/>
+        <Button clickHandler={handleSubmit} text={authenticating ? 'Submitting' : 'Submit'} full />
       </div>
       <p className='text-center'>{isRegister ? "Already have an account? " : "Don't have an accaunt? "}
         <button onClick={() => {

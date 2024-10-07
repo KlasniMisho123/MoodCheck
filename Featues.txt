@@ -1,0 +1,9 @@
+1**
+Doesnot Retrieve Data From Database ??? - calendar.js...
+
+console.log("complateData: ", completeData)
+console.log("ss: ", completeData?.[selectedYear]?.[numericMonth]) - undefiend from start. error in useeffect?
+
+2**
+Dashboard Stats-Error -- error caused by Data Retrieval
+Likely to be fixed after 1st Err.
