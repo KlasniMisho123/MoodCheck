@@ -1,3 +1,5 @@
+---- Error Side ----
+
 1**
 Doesnot Retrieve Data From Database ??? - calendar.js...
 
@@ -7,3 +9,11 @@ console.log("ss: ", completeData?.[selectedYear]?.[numericMonth]) - undefiend fr
 2**
 Dashboard Stats-Error -- error caused by Data Retrieval
 Likely to be fixed after 1st Err.
+
+3**
+{selectedYear} - Display onchange year it goes to -1/1 instead of next year.
+
+
+---- User Experience Side ----
+
+1** Login/Sign up Errors, resets.
