@@ -58,7 +58,7 @@ export default function Login() {
       <div className=' max-w-[400px] w-full mx-auto '>
         <Button clickHandler={handleSubmit} text={authenticating ? 'Submitting' : 'Submit'} full />
       </div>
-      <p className='text-center'>{isRegister ? "Already have an account? " : "Don't have an accaunt? "}
+      <p className='text-center'>{isRegister ? "Already have an account? " : "Don\'t have an accaunt? "}
         <button onClick={() => {
           setIsRegister(!isRegister)}}
          className='text-indigo-600'>{isRegister ? "Login" : "Sign up"}</button>
