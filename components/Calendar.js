@@ -1,5 +1,6 @@
 'use client'
-import { baseRating, gradients } from '@/utils';
+// import { baseRating, gradients } from '@/utils';
+import { baseRating, gradients } from '../utils';
 import { Fugaz_One } from 'next/font/google';
 import React, { useState } from 'react'
 
@@ -23,11 +24,9 @@ export default function Calendar(props) {
   const [selectedMonth, setSelectMonth] = useState(Object.keys(months)[currMonth])
   const [selectedYear, setSelectedYear] = useState(now.getFullYear())
   
-  console.log("complateData: ", completeData)
-  
   const numericMonth = monthArr.indexOf(selectedMonth)
   const data = completeData?.[selectedYear]?.[numericMonth] || {}
-  console.log("ss: ", completeData?.[selectedYear]?.[numericMonth])
+
   function handleIncrementMonth(val) {
     // value = +1 -1
     /*if we hit bounds of the months, \then we can just adjust year 
@@ -44,10 +43,7 @@ export default function Calendar(props) {
       setSelectMonth(monthArr[numericMonth + val])
     }
   }
-
-  console.log(`SELECTED MONTH: ${selectedMonth}`)
-  // const year = 2024;
-  // const month = "July";
+  
   const monthNow = new Date(selectedYear, Object.keys(months).indexOf(selectedMonth), 1)
   const firstDayOfMonth = monthNow.getDay();
   const daysInMonth  = new Date(selectedYear, Object.keys(selectedMonth).indexOf(selectedMonth) + 1, 0).getDate()

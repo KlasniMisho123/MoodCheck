@@ -2,9 +2,11 @@
 import { Fugaz_One } from 'next/font/google';
 import React, { useEffect, useState } from 'react'
 import Calendar from './Calendar';
-import { useAuth } from '@/context/AuthContext';
+// import { useAuth } from '@/context/AuthContext';
+import { useAuth } from '../context/AuthContext';
 import { doc, setDoc } from 'firebase/firestore';
-import { db } from '@/firebase';
+// import { db } from '@/firebase';
+import { db } from '../firebase';
 import Login from './Login';
 import Loading from './Loading';
 
@@ -23,7 +25,6 @@ export default function Dashboard() {
       for (let month in data[year]) {
         for (let day in data[year][month]) {
           let days_mood = data[year][month][day]
-          console.log("days_mood: ", days_mood)
           total_number_of_days++
           sum_moods += days_mood
         }

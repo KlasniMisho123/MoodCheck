@@ -1,21 +1,13 @@
 ---- Error Side ----
 
-1**
-Doesnot Retrieve Data From Database ??? - calendar.js -BAGON
-
-console.log("complateData: ", completeData)
-console.log("ss: ", completeData?.[selectedYear]?.[numericMonth]) - undefiend from start. error in useeffect?
-
-2**
-Dashboard Stats-Error -- error caused by Data Retrieval
-Likely to be fixed after 1st Err. -BAGON
-
 3**
 {selectedYear} - Display onchange year it goes to -1/1 instead of next year.
 
-4** Deployment Error netlify -BAGON
+4** 
+Deployment Error netlify - //Deployment Values??
+
 ---- User Experience Side ----
 
 1** Login/Sign up Errors, resets.
 
-2** Mood sentence Future.
+2** Mood sentence Feature.

@@ -2,8 +2,8 @@
 import Link from 'next/link'
 import React from 'react'
 import Button from './Button'
-import { useAuth } from '@/context/AuthContext'
-
+// import { useAuth } from '@/context/AuthContext'
+import { useAuth } from '../context/AuthContext'
 
 export default function CallToAction() {
     const { currentUser } = useAuth()

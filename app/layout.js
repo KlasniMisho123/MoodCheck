@@ -1,10 +1,12 @@
 import localFont from "next/font/local";
 import { Fugaz_One, Open_Sans } from 'next/font/google';
-import { AuthProvider } from "@/context/AuthContext";
+// import { AuthProvider } from "@/context/AuthContext";
+import { AuthProvider } from "../context/AuthContext";
 import "./globals.css";
 import Link from "next/link";
 import Head from "./head";
-import Logout from "@/components/Logout";
+// import Logout from "@/components/Logout";
+import Logout from "../components/Logout";
 
 const opensans  = Open_Sans ({ subsets: ["latin"], weight: ["400"] });
 const fugaz = Fugaz_One({ subsets: ["latin"], weight: ["400"] });
