@@ -2,11 +2,11 @@
 import { Fugaz_One } from 'next/font/google';
 import React, { useEffect, useState } from 'react'
 import Calendar from './Calendar';
-// import { useAuth } from '@/context/AuthContext';
-import { useAuth } from '../context/AuthContext';
+import { useAuth } from '@/context/AuthContext';
+// import { useAuth } from '../context/AuthContext';
 import { doc, setDoc } from 'firebase/firestore';
-// import { db } from '@/firebase';
-import { db } from '../firebase';
+import { db } from '@/firebase';
+// import { db } from '../firebase';
 import Login from './Login';
 import Loading from './Loading';
 
