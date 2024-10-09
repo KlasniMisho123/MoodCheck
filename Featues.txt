@@ -11,3 +11,5 @@ Deployment Error netlify - //Deployment Values??
 1** Login/Sign up Errors, resets.
 
 2** Mood sentence Feature.
+
+3** Dashboard Footer, Footer.
