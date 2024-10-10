@@ -1,11 +1,5 @@
 ---- Error Side ----
 
-3**
-{selectedYear} - Display onchange year it goes to -1/1 instead of next year.
-
-4** 
-Deployment Error netlify - //Deployment Values??
-
 ---- User Experience Side ----
 
 1** Login/Sign up Errors, resets.

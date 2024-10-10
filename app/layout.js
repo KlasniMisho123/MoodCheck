@@ -6,6 +6,7 @@ import "./globals.css";
 import Link from "next/link";
 import Head from "./head";
 import Logout from "@/components/Logout";
+import Footer from "@/components/Footer";
 // import Logout from "../components/Logout";
 
 const opensans  = Open_Sans ({ subsets: ["latin"], weight: ["400"] });
@@ -29,9 +30,7 @@ export default function RootLayout({ children }) {
   )
 
   const footer = (
-    <footer className="p-4 sm:p-8 grid place-items-center">
-      <p className={"text-indigo-500 "}> Created with ❤️ </p>
-    </footer>
+    <Footer />
   )
 
   return (
