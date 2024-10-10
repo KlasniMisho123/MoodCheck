@@ -33,11 +33,11 @@ export default function Calendar(props) {
     that is displayed instead */
     if(numericMonth + val < 0) {
       //set month value == 11 and decrement the year
-      setSelectedYear(curr => - 1)
+      setSelectedYear(selectedYear - 1)
       setSelectMonth(monthArr[monthArr.length - 1])
     } else if(numericMonth + val > 11) {
       //set month value = 0 and increment the year
-      setSelectedYear(curr => + 1)
+      setSelectedYear(selectedYear + 1)
       setSelectMonth(monthArr[0])
     } else {
       setSelectMonth(monthArr[numericMonth + val])
