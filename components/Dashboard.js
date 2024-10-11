@@ -30,7 +30,7 @@ export default function Dashboard() {
         }
       }
     }
-    return { num_days: total_number_of_days, average_mood: sum_moods / total_number_of_days }
+    return { num_days: total_number_of_days, average_mood: (sum_moods / total_number_of_days).toFixed(2) }
   }
 
   const statuses = {
@@ -115,7 +115,7 @@ export default function Dashboard() {
             <button onClick={() => {
               const currentMoodValue = moodIndex + 1
               handleSetMood(currentMoodValue)
-            }} className={'p-4 px-8 rounded-2xl purpleShadow duration-200 bg-indigo-50 hover:bg-indigo-100 text-center flex flex-col items-center gap-2 flex-1 '} key={moodIndex}> 
+            }} className={' p-4 px-8 rounded-2xl duration-200 bg-indigo-50 hover:bg-indigo-100 text-center flex flex-col items-center gap-2 flex-1 shadow '} key={moodIndex}> 
               <p className='text-4xl sm:text-5xl md:text-6xl'>{moods[mood]}</p>
               <p className={'text-indigo-500 text-xs sm:text-sm md:text-base ' + fugaz.className}>{mood}</p>
             </button>
