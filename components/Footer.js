@@ -17,7 +17,7 @@ export default function Footer() {
 
 
   return (
-    <footer className={`${pathname !== "/contactus" ? "pt-4 sm:pt-8 grid" : ""} place-items-center border w-full`}>
+    <footer className={`${pathname !== "/contactus" ? "pt-4 sm:pt-8 grid" : ""} place-items-center border w-full `}>
       {pathname !== "/contactus" && <ContactUsElement />}
       
         <div className='bg-indigo-50 w-full py-4 p-4 flex justify-center '>

@@ -6,6 +6,10 @@
 
 2** Mood sentence Feature.
 
-4** ( Contact Us )
+3** (Contact Us Element)
 
-5** ( Footer Links, About Us, Portfolio )
+4** (Contact Us Page)
+
+5** (Footer Links, About Us, Portfolio)
+
+6** -- responsive --
