@@ -1,6 +1,5 @@
 'use client'
 import { baseRating, gradients } from '@/utils';
-// import { baseRating, gradients } from '../utils';
 import { Fugaz_One } from 'next/font/google';
 import React, { useState } from 'react'
 

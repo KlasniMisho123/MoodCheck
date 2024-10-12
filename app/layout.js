@@ -7,7 +7,7 @@ import Link from "next/link";
 import Head from "./head";
 import Logout from "@/components/Logout";
 import Footer from "@/components/Footer";
-// import Logout from "../components/Logout";
+
 
 const opensans  = Open_Sans ({ subsets: ["latin"], weight: ["400"] });
 const fugaz = Fugaz_One({ subsets: ["latin"], weight: ["400"] });

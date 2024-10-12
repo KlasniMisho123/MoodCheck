@@ -3,10 +3,8 @@ import { Fugaz_One } from 'next/font/google';
 import React, { useEffect, useState } from 'react'
 import Calendar from './Calendar';
 import { useAuth } from '@/context/AuthContext';
-// import { useAuth } from '../context/AuthContext';
 import { doc, setDoc } from 'firebase/firestore';
 import { db } from '@/firebase';
-// import { db } from '../firebase';
 import Login from './Login';
 import Loading from './Loading';
 
@@ -17,7 +15,6 @@ export default function Dashboard() {
   const [data, setData] = useState({})
   const now = new Date()
 
-  // error caused by Data Retrieval
   function countValues() {
     let total_number_of_days = 0
     let sum_moods = 0
