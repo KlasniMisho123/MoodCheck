@@ -3,9 +3,11 @@ import Button from './Button'
 import Link from 'next/link'
 import { Fugaz_One } from 'next/font/google'
 
+
 const fugaz = Fugaz_One({ subsets: ["latin"], weight: ["400"] });
 
 export default function ContactUsElement() {
+
   return (
     <div className='bg-white border border-black shadow rounded-[32px] p-6 mb-4 flex flex-col gap-4 gap-6:md gap-8:lg '>
         <div>
