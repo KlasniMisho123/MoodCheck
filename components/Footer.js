@@ -66,7 +66,7 @@ export default function Footer() {
           </div>
         </div> 
         
-        <div className='border-t border-black border-dashed w-full flex justify-center py-1 '> 
+        <div className='border-t border-black border-dashed w-full flex justify-center py-2 '> 
           <p>&copy; {currentYear} <span className={'text-indigo-500 ' + fugaz.className }> MoodCheck </span> All rights reserved.</p>
         </div>
     </footer>
