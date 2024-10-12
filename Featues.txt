@@ -6,4 +6,6 @@
 
 2** Mood sentence Feature.
 
-3** Dashboard Footer, Footer.
+4** ( Contact Us )
+
+5** ( Footer Links, About Us, Portfolio )
