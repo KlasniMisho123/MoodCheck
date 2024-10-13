@@ -36,7 +36,7 @@ export default function ContactUs() {
     return (
     <div className=''>
         
-        <h1 className={'my-[40px] sm:text-xl md:text-2xl lg:text-3xl text-center ' + fugaz.className} > We <span className='text-indigo-500 '> Value </span> Your Feedback </h1>
+        <h1 className={'my-[40px] sm:text-xl md:text-2xl lg:text-3xl text-center ' + fugaz.className} > We <span className='textGradient '> Value </span> Your Feedback <i className="fa-regular fa-comment-dots ml-2 textGradient"></i></h1>
 
         <div className='w-full flex justify-center p-4 '>
             
