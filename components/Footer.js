@@ -12,7 +12,6 @@ const fugaz = Fugaz_One({ subsets: ["latin"], weight: ["400"] });
 
 export default function Footer() {
   const pathname = usePathname();
-  console.log(pathname)
   const currentYear = new Date().getFullYear();
 
 

@@ -7,6 +7,8 @@ import Button from './Button';
 import { Fugaz_One, Open_Sans } from 'next/font/google';
 import Link from 'next/link';
 import GetInTouchElement from './GetInTouchElement';
+import axios from "axios";
+import InputError from './InputError';
 
 const fugaz = Fugaz_One({ subsets: ["latin"], weight: ["400"] });
 const opensans  = Open_Sans ({ subsets: ["latin"], weight: ["400"] });
@@ -16,15 +18,40 @@ export default function ContactUs() {
     const [contactEmail, setContactEmail ] = useState("")
     const [contactSubject, setContactSubject ] = useState("")
     const [contactText, setContactText ] = useState("")
+    const [contactError, setContactError ] = useState("")
     const { currentUser, loading } = useAuth()
-
-    function handleContactSubmit() {
-        console.log(`Name: ${contactName}`)
-        console.log("Email: ", contactEmail)
-        console.log("Subject: ", contactSubject)
-        console.log("Text: ", contactText)
-
+    
+    async function handleContactSubmit(e) {
+        e.preventDefault();
         
+        if(checkValidEmail(contactEmail)) {
+            try {
+                const sendEmailResponse = await axios.post('http://localhost:5000/sendemail', {
+                    contactName,
+                    contactEmail,
+                    contactSubject,
+                    contactText
+                });
+                resetForm();
+                setContactError("")
+            } catch (error) {
+                console.log(error.message);
+            }
+        } else {
+            setContactError("Invalid Email")
+            console.log("ContactError: Invalid Email")
+        }
+    }
+    function checkValidEmail(email) {
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailPattern.test(email);
+    }
+    
+    function resetForm() {
+        setContactName("")
+        setContactEmail("")
+        setContactSubject("")
+        setContactText("")
     }
 
     if(loading) {
@@ -57,7 +84,6 @@ export default function ContactUs() {
                     contentTwo="(123) 456-7890"
                 />
 
-
                 <GetInTouchElement 
                     entryNumber={3}
                     title="EMAIL"
@@ -69,7 +95,7 @@ export default function ContactUs() {
         </section>
 
 
-        <hr className='my-[40px] border-indigo-500 '/>
+        <hr className='my-[40px] border-indigo-400 '/>
 
         <div className='max-w-[600px] mx-auto w-full'>
             <Link href={'/dashboard'}>
@@ -83,7 +109,7 @@ export default function ContactUs() {
 
         <div className='w-full flex justify-center p-4 '>
             
-            <div className='bg-indigo-100 flex flex-col items-center gap-4 p-6 h-[500px] w-[400px] rounded-lg border border-black '>
+            <form onSubmit={handleContactSubmit} className='bg-indigo-100 flex flex-col items-center gap-4 p-6 h-[500px] w-[400px] rounded-lg border border-black '>
 
             <input className={'border border-black mt-4 rounded-sm p-[2px] ' + opensans.className }
                 placeholder='Name'
@@ -94,19 +120,36 @@ export default function ContactUs() {
                 }}
                 />
 
-                <input className={'border border-black rounded-sm p-[2px] ' + opensans.className }
-                placeholder='Email'
-                type='text' 
-                value={contactEmail}
-                onChange={(e) => {
-                    setContactEmail(e.target.value)
-                }}
-                />
-                
+                { contactError ?  
+                    (<div className='flex flex-col border-l-4 border-red-500 '>
+                        <input className={'border border-black rounded-sm p-[2px] ' + opensans.className }
+                        placeholder='Email'
+                        required
+                        type='text' 
+                        value={contactEmail}
+                        onChange={(e) => {
+                            setContactEmail(e.target.value)
+                        }}
+                        />
+                        <InputError errorText="Invalid Email" /> 
+                    </div>)
+                :   (<div className='flex flex-col '>
+                        <input className={'border border-black rounded-sm p-[2px] ' + opensans.className }
+                        placeholder='Email'
+                        required
+                        type='text' 
+                        value={contactEmail}
+                        onChange={(e) => {
+                            setContactEmail(e.target.value)
+                        }}
+                        /> 
+                        </div>)
+                         }
+
                 <select
                     className={"border border-black px-6 py-1 rounded-sm " + opensans.className}
-                    defaultValue=""
                     value={contactSubject}
+                    required
                     onChange={(e) => {
                         setContactSubject(e.target.value)
                     }}
@@ -121,18 +164,21 @@ export default function ContactUs() {
 
                 <textarea className={'border border-black max-h-[215px] min-h-[30px] rounded-sm ' + opensans.className }
                 placeholder='Context ' 
+                required
                 value={contactText}
                 onChange={(e) => {
                     setContactText(e.target.value)
                 }}
+
                 />
                 <Button 
                 icon={<i className="fa-regular fa-paper-plane mr-2 "></i>}
                 dark 
-                text="Submit" 
-                clickHandler={handleContactSubmit}
+                text="Submit"
+                type="submit" 
                 />    
-            </div>
+
+            </form>
         </div>
     </div>
     

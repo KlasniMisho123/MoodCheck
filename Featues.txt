@@ -1,6 +1,4 @@
 ---- Error Side ----
-Element ERROR on load -- console
-
 
 ---- User Experience Side ----
 
@@ -8,9 +6,7 @@ Element ERROR on load -- console
 
 2** Mood sentence Feature.
 
-3** (Contact Us Element)
-
-4** (Contact Us Page, background, Decoration, input design - onclick)
+4** (Contact Us Page - sendEmail)
 
 5** (Footer Links, About Us, Portfolio)
 
