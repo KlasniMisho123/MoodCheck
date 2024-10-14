@@ -31,3 +31,8 @@
   font-weight: bolder;
   transform: translateX(15px);
 }
+
+.formBackground {
+  background:  -webkit-linear-gradient(#5e5a86, #98a1ea);
+  -webkit-background-clip: content-box;
+}

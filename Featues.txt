@@ -1,4 +1,6 @@
 ---- Error Side ----
+Element ERROR on load -- console
+
 
 ---- User Experience Side ----
 
@@ -13,3 +15,4 @@
 5** (Footer Links, About Us, Portfolio)
 
 6** -- responsive --
+
