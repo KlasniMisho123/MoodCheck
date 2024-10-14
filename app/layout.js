@@ -1,5 +1,5 @@
 import localFont from "next/font/local";
-import { Fugaz_One, Open_Sans } from 'next/font/google';
+import { Fugaz_One, Open_Sans, Poppins } from 'next/font/google';
 import { AuthProvider } from "@/context/AuthContext";
 import "./globals.css";
 import Link from "next/link";
@@ -10,6 +10,7 @@ import Footer from "@/components/Footer";
 
 const opensans  = Open_Sans ({ subsets: ["latin"], weight: ["400"] });
 const fugaz = Fugaz_One({ subsets: ["latin"], weight: ["400"] });
+const poppins = Poppins({ subsets: ["latin"], weight: ["700"] });
 
 
 export const metadata = {

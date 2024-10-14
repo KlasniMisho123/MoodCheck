@@ -43,24 +43,24 @@ export default function ContactUs() {
             <div className='flex flex-row justify-evenly mt-4 '>
                 <GetInTouchElement 
                     title="ADDRESS"
-                    icon={<i className="fa-solid fa-location-dot text-red-500 text-2xl "></i>}
-                    contentOne="SS"
-                    contentTwo="S2"
+                    icon={<i className="fa-solid fa-location-dot text-[#E94560] text-2xl "></i>}
+                    contentOne="MoodCheck: Your Company"
+                    contentTwo="123 Main St, Suite 100, Tbilisi, Georgia"
                 />
 
                 <GetInTouchElement 
-                    title="Phone"
-                    icon={<i className="fa-solid fa-phone text-red-500 text-2xl "></i>}
-                    contentOne="SS"
-                    contentTwo="S2"
+                    title="PHONE"
+                    icon={<i className="fa-solid fa-phone text-[#E94560] text-2xl "></i>}
+                    contentOne="Customer Support"
+                    contentTwo="(123) 456-7890"
                 />
 
 
                 <GetInTouchElement 
-                    title="Email"
-                    icon={<i className="fa-solid fa-envelope text-red-500 text-2xl "></i>}
-                    contentOne="SS"
-                    contentTwo="S2"
+                    title="EMAIL"
+                    icon={<i className="fa-solid fa-envelope text-[#E94560] text-2xl "></i>}
+                    contentOne="General Inquiries"
+                    contentTwo="info@Moodcheck.com"
                 />
             </div>
         </section>
