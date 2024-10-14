@@ -42,6 +42,7 @@ export default function ContactUs() {
             <h1 className={'text-center p-6 sm:text-lg md:text-xl lg:text-2xl ' + fugaz.className }> Get in touch </h1>
             <div className='flex flex-row justify-evenly mt-4 '>
                 <GetInTouchElement 
+                    entryNumber={1}
                     title="ADDRESS"
                     icon={<i className="fa-solid fa-location-dot text-[#E94560] text-2xl "></i>}
                     contentOne="MoodCheck: Your Company"
@@ -49,6 +50,7 @@ export default function ContactUs() {
                 />
 
                 <GetInTouchElement 
+                    entryNumber={2}
                     title="PHONE"
                     icon={<i className="fa-solid fa-phone text-[#E94560] text-2xl "></i>}
                     contentOne="Customer Support"
@@ -57,6 +59,7 @@ export default function ContactUs() {
 
 
                 <GetInTouchElement 
+                    entryNumber={3}
                     title="EMAIL"
                     icon={<i className="fa-solid fa-envelope text-[#E94560] text-2xl "></i>}
                     contentOne="General Inquiries"

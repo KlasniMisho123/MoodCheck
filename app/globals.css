@@ -36,3 +36,26 @@
   background:  -webkit-linear-gradient(#5e5a86, #98a1ea);
   -webkit-background-clip: content-box;
 }
+
+.slideDownElementFirst {
+    animation: slideDown 0.75s ease-in-out forwards; 
+}
+
+.slideDownElementSecond {
+  animation: slideDown 1s ease-in-out forwards; 
+}
+
+.slideDownElementThird {
+  animation: slideDown 1.25s ease-in-out forwards; 
+}
+
+
+@keyframes slideDown{
+  from {
+    opacity: 0; 
+    transform: translateY(-200px); 
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out; 
+  } to {
+    opacity: 1;
+    transform: translateY(0); 
+  }}
