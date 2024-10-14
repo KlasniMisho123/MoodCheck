@@ -6,6 +6,7 @@ import Login from './Login';
 import Button from './Button';
 import { Fugaz_One, Open_Sans } from 'next/font/google';
 import Link from 'next/link';
+import GetInTouchElement from './GetInTouchElement';
 
 const fugaz = Fugaz_One({ subsets: ["latin"], weight: ["400"] });
 const opensans  = Open_Sans ({ subsets: ["latin"], weight: ["400"] });
@@ -40,17 +41,27 @@ export default function ContactUs() {
             {/* GET IN TOUCH SECTION */}
             <h1 className={'text-center p-6 sm:text-lg md:text-xl lg:text-2xl ' + fugaz.className }> Get in touch </h1>
             <div className='flex flex-row justify-evenly mt-4 '>
-                <div className='flex flex-col gap-4 text-center '>
-                    <div> <i className="fa-solid fa-location-dot text-red-500 text-2xl "></i> </div>
-                    <h1>ADDRESS</h1>
-                    <div className='flex flex-col gap-6 '>
-                        <span>SS</span>
-                        <span>S2</span>
-                    </div>
-                </div>
+                <GetInTouchElement 
+                    title="ADDRESS"
+                    icon={<i className="fa-solid fa-location-dot text-red-500 text-2xl "></i>}
+                    contentOne="SS"
+                    contentTwo="S2"
+                />
 
-                <div className='border-x border-gray-500 '>s2</div>
-                <div className='border-l border-gray-500 '>s3</div>
+                <GetInTouchElement 
+                    title="Phone"
+                    icon={<i className="fa-solid fa-phone text-red-500 text-2xl "></i>}
+                    contentOne="SS"
+                    contentTwo="S2"
+                />
+
+
+                <GetInTouchElement 
+                    title="Email"
+                    icon={<i className="fa-solid fa-envelope text-red-500 text-2xl "></i>}
+                    contentOne="SS"
+                    contentTwo="S2"
+                />
             </div>
         </section>
 
