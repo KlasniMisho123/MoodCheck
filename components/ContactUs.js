@@ -64,9 +64,10 @@ export default function ContactUs() {
 
     return (
     <div className=''>
-        <section className='w-full bg-indigo-200 p-4 min-h-[500px]'>
-            {/* GET IN TOUCH SECTION */}
-            <h1 className={'text-center p-6 sm:text-lg md:text-xl lg:text-2xl ' + fugaz.className }> Get in touch </h1>
+        <section className='w-full bg-indigo-400 p-4 min-h-[500px] rounded-lg '>
+            
+            <h1 className={'text-center p-6 sm:text-lg md:text-xl lg:text-2xl ' + fugaz.className }> Help us to improve  </h1>
+            
             <div className='flex flex-row justify-evenly mt-4 '>
                 <GetInTouchElement 
                     entryNumber={1}
@@ -122,7 +123,7 @@ export default function ContactUs() {
 
                 { contactError ?  
                     (<div className='flex flex-col border-l-4 border-red-500 '>
-                        <input className={'border border-black rounded-sm p-[2px] ' + opensans.className }
+                        <input className={'border border-0 rounded-sm p-[2px] focus:outline-none ' + opensans.className }
                         placeholder='Email'
                         required
                         type='text' 

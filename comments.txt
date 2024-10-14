@@ -1,6 +1,5 @@
-.formBackground {
-  background-image: url('https://i.pinimg.com/564x/2c/5e/45/2c5e4522813a095e54f23991ae4b2a0f.jpg'); /* Path to your image */
-  background-size: cover; /* Ensures the image covers the whole area */
-  background-position: center; /* Centers the background image */
-  background-repeat: no-repeat; /* Prevents the image from repeating */
-}  - global.css
+.textGradientOne {
+  background: -webkit-linear-gradient(#FCFAEE, #B8001F); 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; /* Makes text fill transparent for the gradient to show */
+}  - global.css(error doesnot applies 2 together )
