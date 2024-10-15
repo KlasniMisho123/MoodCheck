@@ -24,7 +24,12 @@ export default function ContactUs() {
     async function handleContactSubmit(e) {
         e.preventDefault();
         
-        if(checkValidEmail(contactEmail)) {
+        
+        setContactError("");
+        
+        if (checkValidEmail(contactEmail)) {
+            // Reset form immediately -- no input loss?
+            resetForm();
             try {
                 const sendEmailResponse = await axios.post('http://localhost:5000/sendemail', {
                     contactName,
@@ -32,16 +37,18 @@ export default function ContactUs() {
                     contactSubject,
                     contactText
                 });
-                resetForm();
-                setContactError("")
+                // You can handle success feedback here, if needed
+                // resetForm(); -- ?? resets too late.
             } catch (error) {
+                setContactError("Error sending email. Please try again.");
                 console.log(error.message);
             }
         } else {
-            setContactError("Invalid Email")
-            console.log("ContactError: Invalid Email")
+            setContactError("Invalid Email");
+            console.log("ContactError: Invalid Email");
         }
     }
+    
     function checkValidEmail(email) {
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return emailPattern.test(email);
