@@ -29,7 +29,7 @@ export default function ContactUs() {
         
         if (checkValidEmail(contactEmail)) {
             // Reset form immediately -- no input loss?
-            resetForm();
+            resetForm(); // web console warning err.
             try {
                 const sendEmailResponse = await axios.post('http://localhost:5000/sendemail', {
                     contactName,

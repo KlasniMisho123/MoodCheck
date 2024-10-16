@@ -11,10 +11,17 @@ export default function Login() {
   const [password, setPassword] = useState('')
   const [isRegister, setIsRegister] = useState(false)
   const [authenticating, setAuthenticating] = useState(false)
+  const [errorResponseMessage, setErrorResponseMessage] = useState("")
   const { signup, login } = useAuth()
 
   async  function handleSubmit() {
-    if(!email || !password || password.length < 6 ) {
+
+    // late with single itteration
+    if(!email || !password || password.length < 6) {
+      if(password.length < 6 ) {
+        setErrorResponseMessage("Password should consist atleast 6 char")
+        console.log(errorResponseMessage)
+      }
       return
     }
 
