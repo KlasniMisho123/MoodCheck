@@ -38,7 +38,7 @@ export default function Login() {
         await login(email, password)
       } 
     } catch(err) {
-      {isRegister ? setLoginError("Invalid Email") : setLoginError("Invalid email or password. Please try again.")}
+      {isRegister ? setLoginError("") : setLoginError("Invalid email or password. Please try again.")}
     } finally {
       setAuthenticating(false)
     }

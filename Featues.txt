@@ -2,8 +2,6 @@
 
 ---- User Experience Side ----
 
-1** Login/Sign up Errors, resets, outputs.
-
 2** Mood sentence Feature.
 
 5** (Footer Links, About Us, Portfolio)
