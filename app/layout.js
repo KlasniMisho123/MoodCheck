@@ -25,6 +25,14 @@ export default function RootLayout({ children }) {
       <Link href={'/'}>
         <h1 className={"text-base  sm:text-lg textGradient " + fugaz.className}> MoodCheck </h1>
       </Link>
+      <div className="flex flex-row gap-4 ">
+        <Link href={'/contactus'}>
+          <p>Contact Us</p>
+        </Link>
+        <Link href={'/aboutus'}>
+          <p>About Us</p>
+        </Link>
+      </div>
       <Logout /> 
     </header>
   )
