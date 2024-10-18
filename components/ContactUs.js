@@ -71,7 +71,7 @@ export default function ContactUs() {
 
     return (
     <div className=''>
-        <section className='w-full bg-indigo-300 p-4 min-h-[500px] min-w-[400px] rounded-lg '>
+        <section className='w-full bg-indigo-300 p-4 min-h-[500px] min-w-[470px] rounded-lg '>
             
             <h1 className={'text-center p-6 text-gray-100 sm:text-lg md:text-xl lg:text-2xl ' + fugaz.className }> Help us to improve 😊 </h1>
             
