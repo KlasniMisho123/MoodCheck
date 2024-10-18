@@ -38,7 +38,7 @@
 }
 
 .slideDownElementFirst {
-    animation: slideDown 0.75s ease-in-out forwards; 
+  animation: slideDown 0.75s ease-in-out forwards; 
 }
 
 .slideDownElementSecond {
@@ -58,6 +58,16 @@
   font-size: 18px;
   box-shadow: 2.5px 2.5px 1px 1px lavender;
 }
+
+.aboutUsBackground {
+  background-image: url(https://imgcdn.stablediffusionweb.com/2024/9/12/c057c246-d34d-4a90-bb4c-484bea5d955e.jpg);
+  background-size: cover; 
+  background-position: center;  
+  background-repeat: no-repeat; 
+  
+}
+
+
 
 @keyframes slideDown{
   from {
