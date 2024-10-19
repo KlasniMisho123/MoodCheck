@@ -3,3 +3,6 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; /* Makes text fill transparent for the gradient to show */
 }  - global.css(error doesnot applies 2 together )
+
+
+https://unsplash.com/ -- photoes
