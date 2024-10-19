@@ -1,10 +1,32 @@
-import { Poppins } from 'next/font/google';
+import { Fugaz_One, Poppins } from 'next/font/google';
 import React from 'react'
 import AboutusElement from './AboutusElement';
+import TeamMember from './TeamMember';
 
 const poppins = Poppins({ subsets: ["latin"], weight: ["700"] });
-const uniSplash = "https://images.unsplash.com/"
+const fugaz = Fugaz_One({ subsets: ["latin"], weight: ["400"] });
 // TOTAL USERS, TOTAL EMOTIONS.
+const uniSplash = "https://images.unsplash.com/"
+
+const demoTeamMembers = [
+  {
+    name: 'Bob Smith',
+    imgSrc: 'https://plus.unsplash.com/premium_photo-1663047610372-8ce07a023009?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y2VvfGVufDB8fDB8fHww', 
+    position: 'Project Manager',
+  },
+  {
+    name: 'Alice Johnson',
+    imgSrc: 'https://media.istockphoto.com/id/2161986811/photo/portrait-of-modern-businesswoman.jpg?s=612x612&w=0&k=20&c=yzzoXxN2uegfO-RflGYHezCkm6_cYkURT3CCboHIPOQ=',
+    position: 'UX Designer',
+  },
+  {
+    name: 'Angela Yu',
+    imgSrc: 'https://img-c.udemycdn.com/user/200_H/31334738_a13c_3.jpg', 
+    position: 'Lead Developer',
+  },
+];
+
+
 export default function Aboutus() {
 
   return (
@@ -34,8 +56,24 @@ export default function Aboutus() {
         reverse
         />
 
+        <div className='flex flex-col border border-gray-200 '>
+          <div className={'text-center text-base lg:text-lg textGradient ' + fugaz.className}> Our Team </div>
+          <div className='flex flex-row justify-around p-4 gap-4 '>
+            {demoTeamMembers.map((member, index ) => (
+              <TeamMember 
+              key={index} 
+              name={member.name}
+              imgSrc={member.imgSrc}
+              position= {member.position}
+            />
+            ))}
+            
+            
+          </div>
+        </div>
+
         <div>
-          <div>Team</div>
+          <div>Goals </div>
         </div>
     </section>
   )

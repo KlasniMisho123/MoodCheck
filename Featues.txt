@@ -9,3 +9,6 @@
 6** -- responsive --
 
 7** TOTAL USERS, TOTAL EMOTIONS.
+
+8** serer deployment and endpoints?
+
