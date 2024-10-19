@@ -23,10 +23,10 @@ export default function RootLayout({ children }) {
   const header = (
     <header className="p-4 sm:p-8 flex items-center justify-between gap-4">
       <Link href={'/'}>
-        <h1 className={"text-base  sm:text-lg textGradient " + fugaz.className}> MoodCheck </h1>
+        <h1 className={"text-base sm:text-lg textGradient " + fugaz.className}> MoodCheck </h1>
       </Link>
       <div className="flex flex-row items-center gap-4 ">
-        <div className="flex flex-row min-w-[300px] justify-evenly ">
+        <div className="flex flex-row min-w-[300px] justify-evenly">
           <Link href={'/contactus'}>
             <p className={"text-indigo-500 text-base overflow-hidden whitespace-nowrap navSection " + fugaz.className}> Contact Us</p>
           </Link>
