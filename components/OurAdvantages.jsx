@@ -1,5 +1,9 @@
 import React from 'react'
 import AdvantagesCard from './AdvantagesCard'
+import { Fugaz_One } from 'next/font/google';
+
+
+const fugaz = Fugaz_One({ subsets: ["latin"], weight: ["400"] });
 
 const advantageCardArray = [
   {
@@ -30,16 +34,17 @@ const advantageCardArray = [
 
 export default function OurAdvantages() {
   return (
-    <div className='py-8 bg-green-200 flex flex-col justify-around items-around gap-4'>
-        <h1 className='text-center '> Our Advantages </h1>
-        <div className='flex flex-row py-4 gap-8 '> 
-          {advantageCardArray.map((card, index) => ( 
-            <AdvantagesCard 
-              key={index}
-              title={card.title}
-              icon={card.icon}
-            />
-          ))}
+    <div className='py-8 border border-gray-200 flex flex-col justify-center items-center gap-4 min-w-[430px] overflow-hidden '>
+        <h1 className={'text-center text-base lg:text-lg textGradient ' + fugaz.className}> Our Advantages </h1>
+        <div className='flex flex-row py-4 overflow-hidden '> 
+        {advantageCardArray.map((card, index) => ( 
+            <div className='flex-shrink-0 w-1/3' key={index}> 
+                <AdvantagesCard 
+                    title={card.title}
+                    icon={card.icon}
+                />
+            </div>
+        ))}
         </div>
     </div>
   )

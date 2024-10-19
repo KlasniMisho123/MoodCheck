@@ -60,7 +60,7 @@ export default function Aboutus() {
         reverse
         />
 
-        <div className='flex flex-col border border-gray-200 '>
+        <div className='flex flex-col border border-gray-200 min-w-[430px] '>
           <div className={'text-center text-base lg:text-lg textGradient ' + fugaz.className}> Our Team </div>
           <div className='flex flex-row justify-around p-4 gap-4 overflow-hideen '>
             {demoTeamMembers.map((member, index ) => (
@@ -74,7 +74,7 @@ export default function Aboutus() {
           </div>
         </div>
 
-        <div className='text-gray-100 flex flex-row justify-around gap-6 '> 
+        <div className='text-gray-100 flex flex-row justify-around gap-6 min-w-[430px] '> 
             <div className='flex flex-col items-center bg-blue-400 w-full py-8 gap-2 '>
               <i className="fa-solid fa-mountain text-4xl "></i>
               <h1 className={' text-lg ' + fugaz.className }> Goal </h1>

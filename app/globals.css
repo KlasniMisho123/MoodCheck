@@ -59,6 +59,42 @@
   box-shadow: 2.5px 2.5px 1px 1px lavender;
 }
 
+.advantageCardAction {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  animation: rollAround 15s ease-in-out infinite; 
+  box-shadow: 3px 3px 1px 1px rgb(179, 124, 218);
+}
+
+@keyframes verticalTilt {
+  0% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(30deg); 
+  }
+  100% {
+    transform: rotateY(0deg);
+  }
+}
+
+@keyframes rollAround {
+  0% {
+    transform: translateX(40px);
+  }
+  25% {
+    transform: translateX(-400px);
+  }
+  50% {
+    transform: translateX(-800px);
+  }
+  75% {
+    transform: translateX(-400px);
+  }
+  100% {
+    transform: translateX(40px);
+  }
+}
+
 .aboutUsBackground {
   background-image: url(https://imgcdn.stablediffusionweb.com/2024/9/12/c057c246-d34d-4a90-bb4c-484bea5d955e.jpg);
   background-size: cover; 

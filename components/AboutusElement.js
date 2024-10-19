@@ -10,11 +10,11 @@ export default function AboutusElement(props) {
 
   return (
     <div>
-        <div className={'flex flex-col mt-[60px] gap-[30px] w-full p-4 ' + (reverse ? 'md:flex-row-reverse' : 'md:flex-row')}>
+        <div className={'flex flex-col mt-[60px] gap-[30px] w-full p-4 min-w-[430px] ' + (reverse ? 'md:flex-row-reverse' : 'md:flex-row')}>
 
-        <div >
-        <h1 className={'text-lg text-indigo-500 text-center ' + fugaz.className } > {title} </h1>
-        <p className='w-full bg-indigo-200 p-2 mt-2 '> {dsec} </p>
+        <div className='bg-indigo-200 '>
+        <h1 className={'text-lg p-2 text-indigo-500 text-center bg-white ' + fugaz.className } > {title} </h1>
+        <p className='w-full mt-2 '> {dsec} </p>
         </div>
         <div>
           <img className=" min-w-[400px] w-[400px] h-[400px] object-cover "
