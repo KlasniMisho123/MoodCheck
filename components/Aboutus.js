@@ -72,23 +72,23 @@ export default function Aboutus() {
         </div>
 
         <div className='text-gray-100 flex flex-row justify-around gap-6 '> 
-            <div className='flex flex-col items-center bg-blue-400 w-full p-2 gap-2 '>
+            <div className='flex flex-col items-center bg-blue-400 w-full py-8 gap-2 '>
               <i class="fa-solid fa-mountain text-4xl "></i>
               <h1 className={' text-lg ' + fugaz.className }> Goal </h1>
-              <div className='flex flex-col justify-center '>
-                <div className={' text-sm text-center ' + poppins.className } >Adventure, Balance, Growth </div> 
-                <div className='flex h-[150px] mt-6 text-sm px-4 '> Goals are the milestones we set on our journey to personal and professional fulfillment. 
+              <div className='flex flex-cols justify-center '>
+                <div className={'text-sm text-center ' + poppins.className } >Adventure, Balance, Growth </div> 
+              </div>
+                <div className='flex h-[150px] mt-6 text-sm px-4'> Goals are the milestones we set on our journey to personal and professional fulfillment. 
                   They inspire us to reach higher, encouraging growth and adventure in our lives.
                   Embracing these goals allows us to strive for balance and harmony. </div>
-              </div>
               <div> Goals aren't strictly measured </div>
             </div>
 
-            <div className='flex flex-col items-center bg-blue-400 w-full p-2 gap-2 '>
+            <div className='flex flex-col items-center bg-blue-400 w-full py-8 gap-2 '>
               <i class="fa-solid fa-bullseye text-4xl  "></i>
               <h1 className={' text-lg '+  fugaz.className }> Objective </h1>
               <div className='flex flex-cols justify-center '>
-                <div className={' text-sm ' + poppins.className }>Focus, Achieve, Learn</div>
+                <div className={'text-sm ' + poppins.className }>Focus, Achieve, Learn</div>
               </div>
               <div className='flex h-[150px] mt-6 text-sm px-4'> Objectives are specific, measurable steps we take to achieve our overarching goals. 
                   They provide clarity and focus, guiding our actions toward success. By setting clear objectives, we pave the way to 
