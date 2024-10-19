@@ -2,6 +2,7 @@ import { Fugaz_One, Poppins } from 'next/font/google';
 import React from 'react'
 import AboutusElement from './AboutusElement';
 import TeamMember from './TeamMember';
+import OurAdvantages from './OurAdvantages';
 
 const poppins = Poppins({ subsets: ["latin"], weight: ["700"] });
 const fugaz = Fugaz_One({ subsets: ["latin"], weight: ["400"] });
@@ -43,7 +44,9 @@ export default function Aboutus() {
             "self-awareness, resilience, and proactive mental health practices. Together, we can break the stigma around mental" +
             "wellness and inspire a journey toward a more balanced and fulfilling life."}
         />
-        <div> OUR ADVANTAGES </div>
+
+        <OurAdvantages />
+
       <AboutusElement 
         title= "Our Story"
         imgSrc = {uniSplash + 'photo-1506869640319-fe1a24fd76dc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'}
@@ -59,7 +62,7 @@ export default function Aboutus() {
 
         <div className='flex flex-col border border-gray-200 '>
           <div className={'text-center text-base lg:text-lg textGradient ' + fugaz.className}> Our Team </div>
-          <div className='flex flex-row justify-around p-4 gap-4 '>
+          <div className='flex flex-row justify-around p-4 gap-4 overflow-hideen '>
             {demoTeamMembers.map((member, index ) => (
               <TeamMember 
               key={index} 
@@ -73,7 +76,7 @@ export default function Aboutus() {
 
         <div className='text-gray-100 flex flex-row justify-around gap-6 '> 
             <div className='flex flex-col items-center bg-blue-400 w-full py-8 gap-2 '>
-              <i class="fa-solid fa-mountain text-4xl "></i>
+              <i className="fa-solid fa-mountain text-4xl "></i>
               <h1 className={' text-lg ' + fugaz.className }> Goal </h1>
               <div className='flex flex-cols justify-center '>
                 <div className={'text-sm text-center ' + poppins.className } >Adventure, Balance, Growth </div> 
@@ -85,7 +88,7 @@ export default function Aboutus() {
             </div>
 
             <div className='flex flex-col items-center bg-blue-400 w-full py-8 gap-2 '>
-              <i class="fa-solid fa-bullseye text-4xl  "></i>
+              <i className="fa-solid fa-bullseye text-4xl  "></i>
               <h1 className={' text-lg '+  fugaz.className }> Objective </h1>
               <div className='flex flex-cols justify-center '>
                 <div className={'text-sm ' + poppins.className }>Focus, Achieve, Learn</div>
