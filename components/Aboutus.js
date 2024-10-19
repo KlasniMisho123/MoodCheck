@@ -78,10 +78,10 @@ export default function Aboutus() {
               <div className='flex flex-cols justify-center '>
                 <div className={'text-sm text-center ' + poppins.className } >Adventure, Balance, Growth </div> 
               </div>
-                <div className='flex h-[150px] mt-6 text-sm px-4'> Goals are the milestones we set on our journey to personal and professional fulfillment. 
-                  They inspire us to reach higher, encouraging growth and adventure in our lives.
-                  Embracing these goals allows us to strive for balance and harmony. </div>
-              <div> Goals aren't strictly measured </div>
+                <div className='flex h-[150px] mt-6 text-sm px-4 text-center '> At Moodcheck, we aim to enhance customer satisfaction through exceptional service and build lasting relationships. 
+                  We also seek to grow our market share by exploring new opportunities and fostering a culture of innovation. 
+                </div>
+                <div className='pb-2 '> Goals aren't strictly measured </div>
             </div>
 
             <div className='flex flex-col items-center bg-blue-400 w-full py-8 gap-2 '>
@@ -90,9 +90,8 @@ export default function Aboutus() {
               <div className='flex flex-cols justify-center '>
                 <div className={'text-sm ' + poppins.className }>Focus, Achieve, Learn</div>
               </div>
-              <div className='flex h-[150px] mt-6 text-sm px-4'> Objectives are specific, measurable steps we take to achieve our overarching goals. 
-                  They provide clarity and focus, guiding our actions toward success. By setting clear objectives, we pave the way to 
-                  chieve our dreams and foster a culture of learning.
+              <div className='flex h-[150px] mt-6 text-sm px-4 text-center '> We aim for a 90% customer satisfaction rating next year through effective feedback. 
+                We plan to expand into two new markets and launch three innovative products by year-end.
               </div>
               <div className='pb-2 '> Objectives aren't strictly measured </div>
             </div>
