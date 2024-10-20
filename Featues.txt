@@ -4,9 +4,13 @@
 
 ---- User Experience Side ----
 
+4** INvalid Email During Registration
+
 6** -- responsive -- (
     ** small screen - footer
 )
+
+
 
 ---- Features Side ----
 
