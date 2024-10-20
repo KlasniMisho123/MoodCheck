@@ -6,6 +6,7 @@ import Link from 'next/link';
 import FooterLink from './FooterLink';
 import { usePathname } from 'next/navigation';
 import ContactUsElement from './ContactUsElement';
+import path from 'path';
 
 const fugaz = Fugaz_One({ subsets: ["latin"], weight: ["400"] });
 
@@ -14,12 +15,11 @@ export default function Footer() {
   const pathname = usePathname();
   const currentYear = new Date().getFullYear();
 
-
   return (
-    <footer className={`${pathname !== "/contactus" ? "pt-4 sm:pt-8 grid" : ""} place-items-center border w-full `}>
+    <footer className={`${pathname !== "/contactus" ? "pt-4 gap-6 sm:pt-8 grid  " : "null"} place-items-center border `}>
       {pathname !== "/contactus" && <ContactUsElement />}
       
-        <div className='bg-indigo-50 w-full py-4 p-4 flex justify-center '>
+        <div className='bg-indigo-100 w-full py-4 p-4 flex items-center justify-center '>
           <div className='flex flex-col gap-6 p-6 max-w-md '>
           <Link href={'/'}>
             <h1 className={"text-base sm:text-lg textGradient " + fugaz.className}> MoodCheck </h1>
@@ -43,7 +43,7 @@ export default function Footer() {
           <div className='flex flex-row gap-12 mx-auto py-8 '>
 
             <div className='flex flex-col gap-3 '>
-              <h4 className={'text-gray-500 ' + fugaz.className}> Usefull Links
+              <h4 className={'text-gray-500 whitespace-nowrap ' + fugaz.className}> Usefull Links
               <div className='border border-black'/>
               </h4>
               <FooterLink text="Privacy Policy" link={'/'} />
@@ -52,11 +52,11 @@ export default function Footer() {
             </div>
 
             <div className='flex flex-col gap-3 '>
-              <h4 className={'text-gray-500 ' + fugaz.className}> More Info
+              <h4 className={'text-gray-500 whitespace-nowrap ' + fugaz.className}> More Info
               <div className='border border-black'/>
               </h4>
-              <FooterLink text="About Us" link={''} />
-              <FooterLink text="Contact Us" link={''} />
+              <FooterLink text="About Us" link={'/aboutus'} />
+              <FooterLink text="Contact Us" link={'/contactus'} />
               <FooterLink text="Support" link={''} />
             </div>
           </div>

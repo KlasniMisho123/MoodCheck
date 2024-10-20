@@ -16,7 +16,7 @@ export default function ContactUsElement() {
         </div>
         <div className='flex justify-center'>
             <Link href={'/contactus'}> 
-                <Button text={"Contact Us"} icon={<i className="fa-regular fa-clipboard"></i>} dark/>
+                <Button text={"Contact Us"} icon={<i className="fa-regular fa-clipboard"></i>} dark />
             </Link>
         </div>
     </div>

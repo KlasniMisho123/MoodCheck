@@ -4,11 +4,13 @@
 
 2** Mood sentence Feature.
 
-5** (Footer Links, About Us, Portfolio)
+5** (Footer Links, Portfolio)
 
-6** -- responsive --
+6** -- responsive -- (
+    1** small screen - footer **
+)
 
 7** TOTAL USERS, TOTAL EMOTIONS.
 
-8** serer deployment and endpoints?
+8** server deployment and endpoints?
 
