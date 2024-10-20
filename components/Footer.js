@@ -6,10 +6,8 @@ import Link from 'next/link';
 import FooterLink from './FooterLink';
 import { usePathname } from 'next/navigation';
 import ContactUsElement from './ContactUsElement';
-import path from 'path';
 
 const fugaz = Fugaz_One({ subsets: ["latin"], weight: ["400"] });
-
 
 export default function Footer() {
   const pathname = usePathname();

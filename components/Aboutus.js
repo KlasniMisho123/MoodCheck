@@ -1,12 +1,14 @@
+'use client'
 import { Fugaz_One, Poppins } from 'next/font/google';
 import React from 'react'
 import AboutusElement from './AboutusElement';
 import TeamMember from './TeamMember';
 import OurAdvantages from './OurAdvantages';
+import { useAuth } from '@/context/AuthContext';
 
 const poppins = Poppins({ subsets: ["latin"], weight: ["700"] });
 const fugaz = Fugaz_One({ subsets: ["latin"], weight: ["400"] });
-// TOTAL USERS, TOTAL EMOTIONS.
+
 const uniSplash = "https://images.unsplash.com/"
 
 const demoTeamMembers = [
@@ -29,6 +31,12 @@ const demoTeamMembers = [
 
 
 export default function Aboutus() {
+
+  const {totalUsers, totalEmotions } = useAuth()
+
+  console.log("totalUsers: ", totalUsers)
+  console.log("totalEmotions: ",totalEmotions)
+
 
   return (
     <section className='w-full flex flex-col gap-6 '>

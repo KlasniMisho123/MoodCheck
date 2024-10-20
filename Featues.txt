@@ -1,16 +1,19 @@
 ---- Error Side ----
 
+1** -fugaz one related error ?? -- BAGON
+
 ---- User Experience Side ----
+
+6** -- responsive -- (
+    ** small screen - footer
+)
+
+---- Features Side ----
 
 2** Mood sentence Feature.
 
-5** (Footer Links, Portfolio)
+7** TOTAL USERS, TOTAL EMOTIONS. -- BAGON
 
-6** -- responsive -- (
-    1** small screen - footer **
-)
+5** (Footer Links, Portfolio) 
 
-7** TOTAL USERS, TOTAL EMOTIONS.
-
-8** server deployment and endpoints?
-
+8** server deployment and endpoints? 
