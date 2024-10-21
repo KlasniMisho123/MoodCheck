@@ -14,7 +14,7 @@ export default function AboutusElement(props) {
 
         <div className='bg-indigo-200 '>
         <h1 className={'text-lg p-2 text-indigo-500 text-center bg-white ' + fugaz.className } > {title} </h1>
-        <p className='w-full mt-2 '> {dsec} </p>
+        <p className='w-full mt-2 p-4 '> {dsec} </p>
         </div>
         <div>
           <img className=" min-w-[400px] w-[400px] h-[400px] object-cover "

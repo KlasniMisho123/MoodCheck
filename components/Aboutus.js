@@ -44,9 +44,9 @@ export default function Aboutus() {
       </div>
 
         <section> 
-          <div className='border border-gray-200 flex flex-col items-center bg-indigo-200 '>  
+          <div className='border border-gray-200 flex flex-col items-center bg-indigo-200 min-w-min '>  
             
-            <h1 className={'text-xl textGradient p-4 ' + fugaz.className }> Stats section</h1> 
+            <h1 className={'text-xl textGradient p-4 ' + fugaz.className }> Stats section </h1> 
             
             <div className={'text-base flex flex-row gap-6 p-4 whitespace-nowrap '} >
                 <div className=' flex flex-col items-center border bg-white '>
@@ -116,7 +116,7 @@ export default function Aboutus() {
                 <div className='flex h-[150px] mt-6 text-sm px-1 text-center '> At Moodcheck, we aim to enhance customer satisfaction through exceptional service and build lasting relationships. 
                   We also seek to grow our market share by exploring new opportunities and fostering a culture of innovation. 
                 </div>
-                <div className='pb-2 text-center '> Goals aren't strictly measured </div>
+                <div className='py-4 text-center '> Goals aren't strictly measured </div>
             </div>
 
             <div className='flex flex-col items-center bg-blue-400 w-full py-8 gap-2 '>
@@ -128,7 +128,7 @@ export default function Aboutus() {
               <div className='flex h-[150px] mt-6 text-sm px-1 text-center '> We aim for a 90% customer satisfaction rating next year through effective feedback. 
                 We plan to expand into two new markets and launch three innovative products by year-end.
               </div>
-              <div className='pb-2 text-center '> Objectives aren't strictly measured </div>
+              <div className='py-4 text-center '> Objectives aren't strictly measured </div>
             </div>
         </div>
 

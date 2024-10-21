@@ -73,20 +73,24 @@ export function AuthProvider({ children }) {
                 const userCollection = collection(db, 'users');
                 console.log(userCollection); // istoriuli errori - ifixeba consol.logit 
                 const userSnapshot = await getDocs(userCollection);
-                console.log("Fetched user count:", userSnapshot.size);
+                
+                // Total Users
+
                 setTotalUsers(userSnapshot.size);
+                
+                // Total Emotion 
+
+                // setTotalEmotions();
+
+                // Total Feedback
+
+                // setTotalFeedback();
             } catch (error) {
                 console.error("Error fetching user count: ", error);
             }
         };
         fetchUserCount();
-    }, []);
-
-    useEffect(() => {
-    console.log("Updated totalUsers:", totalUsers);
-    }, [totalUsers]);
-
-
+    }, [totalUsers, totalEmotions, totalFeedback]);
 
     const value = {
         totalUsers,
