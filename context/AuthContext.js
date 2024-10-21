@@ -1,7 +1,7 @@
 'use client'
 import { auth, db } from "../firebase";
 import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut } from 'firebase/auth'
-import { doc, getDoc } from 'firebase/firestore'
+import { collection, doc, getDoc, getDocs } from 'firebase/firestore'
 import React, { useContext, useState, useEffect } from 'react'
 
 
@@ -18,7 +18,9 @@ export function AuthProvider({ children }) {
     const [totalUsers, setTotalUsers] = useState(0)
     const [totalEmotions, setTotalEmotions] = useState(0)
     const [totalFeedback, setTotalFeedback] = useState(0)
+
     // AUTH HANDLERS
+
     function signup(email, password) {
         return createUserWithEmailAndPassword(auth, email, password)
     }
@@ -63,7 +65,28 @@ export function AuthProvider({ children }) {
         return unsubscribe
     }, [])
 
-    
+    // TOTAL Stats Count - chat
+
+    useEffect(() => {
+        async function fetchUserCount() {
+            try {
+                const userCollection = collection(db, 'users');
+                console.log(userCollection); // istoriuli errori - ifixeba consol.logit 
+                const userSnapshot = await getDocs(userCollection);
+                console.log("Fetched user count:", userSnapshot.size);
+                setTotalUsers(userSnapshot.size);
+            } catch (error) {
+                console.error("Error fetching user count: ", error);
+            }
+        };
+        fetchUserCount();
+    }, []);
+
+    useEffect(() => {
+    console.log("Updated totalUsers:", totalUsers);
+    }, [totalUsers]);
+
+
 
     const value = {
         totalUsers,
