@@ -40,8 +40,9 @@ export default function Aboutus() {
 
   return (
     <section className='w-full flex flex-col gap-6 '>
-      <div className='aboutUsBackground min-h-[300px] min-w-[400px] w-full '>
-        <h1 className={'text-xl text-center mt-[60px] text-gray-100 ' + poppins.className} > About Us </h1>
+      <div className='min-h-[300px] flex flex-row justify-center min-w-[400px] w-full '>
+        <img src='https://imgcdn.stablediffusionweb.com/2024/9/12/c057c246-d34d-4a90-bb4c-484bea5d955e.jpg' />
+        <h1 className={'text-xl text-center mt-[60px] text-gray-100 z-3 absolute ' + poppins.className} > About Us </h1>
       </div>
         <AboutusElement 
         title= "Our Mission "

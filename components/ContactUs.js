@@ -97,7 +97,7 @@ export default function ContactUs() {
                     title="EMAIL"
                     icon={<i className="fa-solid fa-envelope text-[#E94560] text-2xl "></i>}
                     contentOne="General Inquiries"
-                    contentTwo="info@Moodcheck.com"
+                    contentTwo="moodcheck12@gmail.com"
                 />
             </div>
         </section>

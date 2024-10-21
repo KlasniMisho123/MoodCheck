@@ -2,15 +2,15 @@
 
 1** -fugaz one related error ?? -- BAGON
 
----- User Experience Side ----
+4** INvalid Email During Reg 
 
-4** INvalid Email During Registration
+9** URL BACKGROUND - ABOUT US -invinsible vercel. 
+
+---- User Experience Side ----
 
 6** -- responsive -- (
     ** small screen - footer
 )
-
-
 
 ---- Features Side ----
 
