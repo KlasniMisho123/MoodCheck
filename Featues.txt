@@ -4,9 +4,11 @@
 
 4** INvalid Email During Reg 
 
-9** URL BACKGROUND - ABOUT US -invinsible vercel. 
+9** URL/Absolute BACKGROUND - ABOUT US - vercel.
 
 ---- User Experience Side ----
+
+10** goal/objective responsive.
 
 6** -- responsive -- (
     ** small screen - footer

@@ -15,7 +15,9 @@ export function AuthProvider({ children }) {
     const [currentUser, setCurrentUser] = useState(null)
     const [userDataObj, setUserDataObj] = useState(null)
     const [loading, setLoading] = useState(true)
-
+    const [totalUsers, setTotalUsers] = useState(0)
+    const [totalEmotions, setTotalEmotions] = useState(0)
+    const [totalFeedback, setTotalFeedback] = useState(0)
     // AUTH HANDLERS
     function signup(email, password) {
         return createUserWithEmailAndPassword(auth, email, password)
@@ -64,6 +66,9 @@ export function AuthProvider({ children }) {
     
 
     const value = {
+        totalUsers,
+        totalEmotions,
+        totalFeedback,
         currentUser,
         userDataObj,
         setUserDataObj,

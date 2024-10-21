@@ -32,18 +32,41 @@ const demoTeamMembers = [
 
 export default function Aboutus() {
 
-  const {totalUsers, totalEmotions } = useAuth()
-
-  console.log("totalUsers: ", totalUsers)
-  console.log("totalEmotions: ",totalEmotions)
-
+  const {totalUsers, totalEmotions, totalFeedback } = useAuth()
 
   return (
     <section className='w-full flex flex-col gap-6 '>
       <div className='min-h-[300px] flex flex-row justify-center min-w-[400px] w-full '>
-        <img src='https://imgcdn.stablediffusionweb.com/2024/9/12/c057c246-d34d-4a90-bb4c-484bea5d955e.jpg' />
+        <img src='https://imgcdn.stablediffusionweb.com/2024/9/12/c057c246-d34d-4a90-bb4c-484bea5d955e.jpg' 
+        className='w-full h-full object-cover '
+        />
         <h1 className={'text-xl text-center mt-[60px] text-gray-100 z-3 absolute ' + poppins.className} > About Us </h1>
       </div>
+
+        <section> 
+          <div className='border border-gray-200 flex flex-col items-center '>  
+            
+            <h1 className={'text-lg textGradient py-4 ' + fugaz.className }> Stats section</h1> 
+            
+            <div className={'text-base flex flex-row gap-6 p-4 whitespace-nowrap '} >
+                <div className='bg-green-200 flex flex-col items-center '>
+                  <div className={'text-lg flex gap-2 p-2 items-center '  + poppins.className}> <p className='text-red-500 '> Total Users </p> <i className="fa-solid fa-user"></i> </div> 
+                  <p className={'text-red-500 text-lg '  + poppins.className}> {totalUsers} </p>
+                </div>
+                <div className='bg-green-200 flex flex-col items-center '>
+                <div className={'text-lg flex gap-2 p-2 items-center '  + poppins.className}> <p className='text-red-500 '> Total Emotions </p> <i className="fa-solid fa-user"></i> </div> 
+                <p className={'text-red-500 text-lg '  + poppins.className}> {totalEmotions} </p>
+                </div>
+                <div className='bg-green-200 flex flex-col items-center '>
+                <div className={'text-lg flex gap-2 p-2 items-center '  + poppins.className}> <p className='text-red-500 '> Total Feedback </p> <i className="fa-solid fa-user"></i> </div> 
+                <p className={'text-red-500 text-lg '  + poppins.className}> {totalFeedback} </p>
+                </div>
+            </div>  
+
+          </div> 
+
+        </section>
+
         <AboutusElement 
         title= "Our Mission "
         imgSrc = {uniSplash + 'photo-1463438690606-f6778b8c1d10?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'}
