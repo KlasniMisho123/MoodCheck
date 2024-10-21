@@ -44,22 +44,22 @@ export default function Aboutus() {
       </div>
 
         <section> 
-          <div className='border border-gray-200 flex flex-col items-center '>  
+          <div className='border border-gray-200 flex flex-col items-center bg-indigo-200 '>  
             
-            <h1 className={'text-lg textGradient py-4 ' + fugaz.className }> Stats section</h1> 
+            <h1 className={'text-xl textGradient p-4 ' + fugaz.className }> Stats section</h1> 
             
             <div className={'text-base flex flex-row gap-6 p-4 whitespace-nowrap '} >
-                <div className='bg-green-200 flex flex-col items-center '>
-                  <div className={'text-lg flex gap-2 p-2 items-center '  + poppins.className}> <p className='text-red-500 '> Total Users </p> <i className="fa-solid fa-user"></i> </div> 
+                <div className=' flex flex-col items-center border bg-white '>
+                  <div className={'text-lg flex gap-2 p-2 items-center '  + poppins.className}> <p className='text-red-500 '> Total Users </p> <i className="fa-solid fa-user text-xl "></i> </div> 
                   <p className={'text-red-500 text-lg '  + poppins.className}> {totalUsers} </p>
                 </div>
-                <div className='bg-green-200 flex flex-col items-center '>
-                <div className={'text-lg flex gap-2 p-2 items-center '  + poppins.className}> <p className='text-red-500 '> Total Emotions </p> <i className="fa-solid fa-user"></i> </div> 
-                <p className={'text-red-500 text-lg '  + poppins.className}> {totalEmotions} </p>
+                <div className=' flex flex-col items-center border  bg-white '>
+                  <div className={'text-lg flex gap-2 p-2 items-center '  + poppins.className}> <p className='text-red-500 '> Total Emotions </p> <i className="fa-solid fa-face-grin-stars text-xl "></i> </div> 
+                  <p className={'text-red-500 text-lg '  + poppins.className}> {totalEmotions} </p>
                 </div>
-                <div className='bg-green-200 flex flex-col items-center '>
-                <div className={'text-lg flex gap-2 p-2 items-center '  + poppins.className}> <p className='text-red-500 '> Total Feedback </p> <i className="fa-solid fa-user"></i> </div> 
-                <p className={'text-red-500 text-lg '  + poppins.className}> {totalFeedback} </p>
+                <div className=' flex flex-col items-center border bg-white '>
+                  <div className={'text-lg flex gap-2 p-2 items-center '  + poppins.className}> <p className='text-red-500 '> Total Feedback </p> <i className="fa-regular fa-comments text-xl "></i> </div> 
+                  <p className={'text-red-500 text-lg '  + poppins.className}> {totalFeedback} </p>
                 </div>
             </div>  
 
