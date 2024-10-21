@@ -14,7 +14,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className={`${pathname !== "/contactus" ? "pt-4 gap-6 sm:pt-8 grid  " : "null"} place-items-center border `}>
+    <footer className={`${pathname !== "/contactus" ? "pt-4 gap-6 sm:pt-8 grid  " : "null"} place-items-center border min-w-min `}>
       {pathname !== "/contactus" && <ContactUsElement />}
       
         <div className='bg-indigo-100 w-full py-4 p-4 flex items-center justify-center '>

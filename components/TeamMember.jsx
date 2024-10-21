@@ -9,7 +9,7 @@ export default function TeamMember(props) {
     const { name, imgSrc, position } = props
   return (
     <div className='flex flex-col gap-4 '> 
-        <h1 className={'text-center p-2 text-lg ' + fugaz.className } > {name}</h1>
+        <h1 className={'text-center p-2 text-lg whitespace-nowrap ' + fugaz.className } > {name}</h1>
         <img src={imgSrc} className='w-[200px] h-[200px] object-cover ' />
         <h3 className={'text-center p-2 text-sm ' + poppins.className }> {position} </h3>
     </div>
