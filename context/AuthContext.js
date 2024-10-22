@@ -80,6 +80,18 @@ export function AuthProvider({ children }) {
                 
                 // Total Emotion 
 
+                const userList = userSnapshot.docs.map(doc => ({
+                    id: doc.id,           // Document ID
+                    ...doc.data()         // Document data (fields in the 'users' document)
+                  }));
+                  
+                //   console.log("User List: ", userList)
+
+                  userList.forEach((user, index) => {
+                    console.log( index," User: ", user[2024]);
+                    
+                  });
+
                 // setTotalEmotions();
 
                 // Total Feedback
