@@ -71,38 +71,46 @@ export function AuthProvider({ children }) {
         async function fetchUserCount() {
             try {
                 const userCollection = collection(db, 'users');
-                console.log(userCollection); // istoriuli errori - ifixeba consol.logit 
+                console.log(userCollection);
                 const userSnapshot = await getDocs(userCollection);
                 
                 // Total Users
-
                 setTotalUsers(userSnapshot.size);
                 
-                // Total Emotion 
-
+                // Total Emotions in 2024 
                 const userList = userSnapshot.docs.map(doc => ({
-                    id: doc.id,           // Document ID
-                    ...doc.data()         // Document data (fields in the 'users' document)
-                  }));
-                  
-                //   console.log("User List: ", userList)
-
-                  userList.forEach((user, index) => {
-                    console.log( index," User: ", user[2024]);
+                    id: doc.id,
+                    ...doc.data() 
+                }));
+                
+                let emotionCount = 0; 
+    
+                userList.forEach((user, index) => {
+                    console.log(index, "User Data for 2024: ", user['2024']);  
                     
-                  });
-
-                // setTotalEmotions();
-
-                // Total Feedback
-
-                // setTotalFeedback();
+                    if (user['2024']) {
+                        Object.keys(user['2024']).forEach((month) => {
+                            console.log("Month:", month);
+                            
+                            Object.keys(user['2024'][month]).forEach((day) => {
+                                emotionCount += 1;
+                            });
+                        });
+                    } else {
+                        console.log("No data for 2024.");
+                    }
+                });
+    
+                setTotalEmotions(emotionCount);
+    
             } catch (error) {
                 console.error("Error fetching user count: ", error);
             }
-        };
+        }
+    
         fetchUserCount();
     }, [totalUsers, totalEmotions, totalFeedback]);
+    
 
     const value = {
         totalUsers,
