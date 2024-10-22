@@ -82,17 +82,12 @@ export function AuthProvider({ children }) {
                 
                 let emotionCount = 0; 
 
-                userList.forEach((user, index) => {
-                    console.log(index, "User Data: ", user);  
+                userList.forEach((user) => {
                     
                     Object.keys(user).forEach((year) => {
-                        console.log("year: ", year)
                         if (user[year]) {
                             Object.keys(user[year]).forEach((month) => {
-                                console.log("Month:", month);
-                                
                                 Object.keys(user[year][month]).forEach((day) => {
-                                    console.log("Day: ", day)
                                     emotionCount += 1;
                                 });
                             });
