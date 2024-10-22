@@ -52,15 +52,15 @@ export default function Aboutus() {
             <h1 className={'text-xl textGradient p-4 ' + fugaz.className }> Stats section </h1> 
             
             <div className={'text-base flex flex-row gap-6 p-4 whitespace-nowrap '} >
-                <div className=' flex flex-col items-center border bg-white '>
+                <div className=' flex flex-col items-center border bg-white totalStats '>
                   <div className={'text-lg flex gap-2 p-2 items-center '  + poppins.className}> <p className='text-red-500 '> Total Users </p> <i className="fa-solid fa-user text-xl "></i> </div> 
                   <p className={'text-red-500 text-lg '  + poppins.className}> {totalUsers} </p>
                 </div>
-                <div className=' flex flex-col items-center border  bg-white '>
+                <div className=' flex flex-col items-center border  bg-white totalStatsOne '>
                   <div className={'text-lg flex gap-2 p-2 items-center '  + poppins.className}> <p className='text-red-500 '> Total Emotions </p> <i className="fa-solid fa-face-grin-stars text-xl "></i> </div> 
                   <p className={'text-red-500 text-lg '  + poppins.className}> {totalEmotions} </p>
                 </div>
-                <div className=' flex flex-col items-center border bg-white '>
+                <div className=' flex flex-col items-center border bg-white totalStatsTwo '>
                   <div className={'text-lg flex gap-2 p-2 items-center '  + poppins.className}> <p className='text-red-500 '> Total Feedback </p> <i className="fa-regular fa-comments text-xl "></i> </div> 
                   <p className={'text-red-500 text-lg '  + poppins.className}> {totalFeedback} </p>
                 </div>
