@@ -34,7 +34,7 @@ export function AuthProvider({ children }) {
         setCurrentUser(null)
         return signOut(auth)
     }
-
+    
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, async user => {
             try {
@@ -74,34 +74,36 @@ export function AuthProvider({ children }) {
                 console.log(userCollection);
                 const userSnapshot = await getDocs(userCollection);
                 
-                // Total Users
                 setTotalUsers(userSnapshot.size);
                 
-                // Total Emotions in 2024 
                 const userList = userSnapshot.docs.map(doc => ({
-                    id: doc.id,
                     ...doc.data() 
                 }));
                 
                 let emotionCount = 0; 
-    
+
                 userList.forEach((user, index) => {
-                    console.log(index, "User Data for 2024: ", user['2024']);  
+                    console.log(index, "User Data: ", user);  
                     
-                    if (user['2024']) {
-                        Object.keys(user['2024']).forEach((month) => {
-                            console.log("Month:", month);
-                            
-                            Object.keys(user['2024'][month]).forEach((day) => {
-                                emotionCount += 1;
+                    Object.keys(user).forEach((year) => {
+                        console.log("year: ", year)
+                        if (user[year]) {
+                            Object.keys(user[year]).forEach((month) => {
+                                console.log("Month:", month);
+                                
+                                Object.keys(user[year][month]).forEach((day) => {
+                                    console.log("Day: ", day)
+                                    emotionCount += 1;
+                                });
                             });
-                        });
-                    } else {
-                        console.log("No data for 2024.");
-                    }
+                            } else {
+                            console.log("No data for 2024.");
+                        }
+                    });
                 });
-    
+
                 setTotalEmotions(emotionCount);
+                
     
             } catch (error) {
                 console.error("Error fetching user count: ", error);
