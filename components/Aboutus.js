@@ -39,9 +39,9 @@ export default function Aboutus() {
     <section className='w-full flex flex-col gap-6 '>
       <div className='min-h-[300px] flex flex-row justify-center min-w-[400px] w-full '>
         <img 
-        src="/abUsBackground.jpg" 
+        src="/abUsBackground1.jpg" 
         alt="Background Image" 
-        className='w-full h-full object-cover '
+        className='w-full h-[300px] object-cover '
         />
         <h1 className={'text-xl text-center mt-[60px] text-gray-100 z-3 absolute ' + poppins.className} > About Us </h1>
       </div>
