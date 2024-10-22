@@ -71,7 +71,7 @@ export function AuthProvider({ children }) {
         async function fetchUserCount() {
             try {
                 const userCollection = collection(db, 'users');
-                console.log(userCollection);
+                // console.log(userCollection);
                 const userSnapshot = await getDocs(userCollection);
                 
                 setTotalUsers(userSnapshot.size);
