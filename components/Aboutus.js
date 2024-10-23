@@ -61,20 +61,20 @@ export default function Aboutus() {
             
             <div className={'text-base flex flex-row gap-4 px-4 py-8 whitespace-nowrap '} >
                 <div className=' flex flex-col gap-4 items-center px-4 py-8 min-w-[150px] totalStats '> 
-                  <h2 className={'text-4xl text-blue-500 italic ' + mono.className}> 1+</h2>
+                  <h2 className={'text-4xl text-blue-500 italic ' + mono.className}> 1 </h2>
                   <h3 className={'text-sm text-gray-400 ' + poppins.className}> Years of Service </h3>
                   <h4 className={'text-xs text-gray-600 '}> To Monitor Mood </h4>
                 </div>
 
                 <div className=' flex flex-col gap-4 items-center px-4 py-8 min-w-[150px] totalStats '> 
-                  <h2 className={'text-4xl text-purple-500 italic ' + mono.className}> {totalUsers}0+</h2>
+                  <h2 className={'text-4xl text-purple-500 italic ' + mono.className}> {totalUsers}</h2>
                   <h3 className={'text-sm text-gray-400 ' + poppins.className}> Total Users </h3>
                   <h4 className={'text-xs text-gray-600 '}> For a Healthier Life </h4>
                 </div>
 
                 <div className=' flex flex-col gap-4 items-center px-4 py-8 min-w-[150px] totalStats '> 
-                  <h2 className={'text-4xl text-red-500 italic ' + mono.className}> {totalEmotions}0+</h2>
-                  <h3 className={'text-sm text-gray-400 ' + poppins.className}> Emotions Set </h3>
+                  <h2 className={'text-4xl text-red-500 italic ' + mono.className}> {totalEmotions}</h2>
+                  <h3 className={'text-sm text-gray-400 ' + poppins.className}> Emotions Commmited </h3>
                   <h4 className={'text-xs text-gray-600 '}> Connecting with Your Emotions </h4>
                 </div>
             </div>  

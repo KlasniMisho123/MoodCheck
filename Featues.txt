@@ -20,6 +20,8 @@
 
 8** server deployment and endpoints? 
 
-11** Stats Section Design 
+11** WebStats Section Photos/logos /background format :responsive.
 
-12** Feedback Stats.
+12** WebStats - Feedback Stats. 
+
+13** WebStats update after emotion commit/signup 
