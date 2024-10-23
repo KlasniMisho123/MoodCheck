@@ -33,8 +33,13 @@ const demoTeamMembers = [
 
 
 export default function Aboutus() {
-
   const {totalUsers, totalEmotions, totalFeedback } = useAuth()
+
+  const demoStatsElement = (<div className=' flex flex-col items-center border  bg-white totalStatsOne '>
+    <div className={' flex gap-2 p-2 items-center lg:text-lg md:text-base sm:text-sm '  + poppins.className}> <p className='text-red-500 '> Total Emotions </p> <i className="fa-solid fa-face-grin-stars text-xl "></i> </div> 
+    <p className={'text-red-500 text-lg '  + poppins.className}> {totalEmotions} </p>
+  </div> )
+
 
   return (
     <section className='w-full flex flex-col gap-6 '>
@@ -48,32 +53,30 @@ export default function Aboutus() {
       </div>
 
         <section> 
-          <div className='border border-black flex flex-col items-center min-w-[400px] '>  
+          
+          <div className='border border-black flex flex-col items-center min-w-[400px] min-w-min '>  
             
             <h1 className={'text-sm text-blue-500 p-4 ' + fugaz.className }> Behind Our Project </h1> 
             <h3 className={'text-xl p-4 pt-0 ' + poppins.className } > Moodcheck in numbers </h3>
             
-            <div className={'text-base flex flex-row gap-6 px-4 py-8 whitespace-nowrap '} >
-                <div className=' flex flex-col items-center border bg-white totalStats '>
-                  <div className={' flex gap-2 p-2 items-center lg:text-lg md:text-base sm:text-sm '  + poppins.className}> <p className='text-red-500 '> Total Users </p> <i className="fa-solid fa-user text-xl "></i> </div> 
-                  <p className={'text-red-500 text-lg '  + poppins.className}> {totalUsers} </p>
+            <div className={'text-base flex flex-row gap-4 px-4 py-8 whitespace-nowrap '} >
+                <div className=' flex flex-col gap-4 items-center px-4 py-8 min-w-[150px] totalStats '> 
+                  <h2 className={'text-4xl text-blue-500 italic ' + mono.className}> 1+</h2>
+                  <h3 className={'text-sm text-gray-400 ' + poppins.className}> Years of Service </h3>
+                  <h4 className={'text-xs text-gray-600 '}> To Monitor Mood </h4>
                 </div>
-                {/* <div className=' flex flex-col items-center border  bg-white totalStatsOne '>
-                  <div className={' flex gap-2 p-2 items-center lg:text-lg md:text-base sm:text-sm '  + poppins.className}> <p className='text-red-500 '> Total Emotions </p> <i className="fa-solid fa-face-grin-stars text-xl "></i> </div> 
-                  <p className={'text-red-500 text-lg '  + poppins.className}> {totalEmotions} </p>
-                </div> */}
 
                 <div className=' flex flex-col gap-4 items-center px-4 py-8 min-w-[150px] totalStats '> 
-                <h2 className={'text-4xl text-purple-500 italic ' + mono.className}> {totalEmotions}0+</h2>
-                  <h3 className={'text-sm text-gray-500 ' + poppins.className}> Emotions Set </h3>
-                  <h4 className={'text-xs text-gray-500 '}> To Monitor Mood </h4>
+                  <h2 className={'text-4xl text-purple-500 italic ' + mono.className}> {totalUsers}0+</h2>
+                  <h3 className={'text-sm text-gray-400 ' + poppins.className}> Total Users </h3>
+                  <h4 className={'text-xs text-gray-600 '}> For a Healthier Life </h4>
                 </div>
 
-                
-                {/* <div className=' flex flex-col items-center border bg-white totalStatsTwo '>
-                  <div className={'text-lg flex gap-2 p-2 items-center '  + poppins.className}> <p className='text-red-500 '> Total Feedback </p> <i className="fa-regular fa-comments text-xl "></i> </div> 
-                  <p className={'text-red-500 text-lg '  + poppins.className}> {totalFeedback} </p>
-                </div> */}
+                <div className=' flex flex-col gap-4 items-center px-4 py-8 min-w-[150px] totalStats '> 
+                  <h2 className={'text-4xl text-red-500 italic ' + mono.className}> {totalEmotions}0+</h2>
+                  <h3 className={'text-sm text-gray-400 ' + poppins.className}> Emotions Set </h3>
+                  <h4 className={'text-xs text-gray-600 '}> Connecting with Your Emotions </h4>
+                </div>
             </div>  
 
           </div> 
