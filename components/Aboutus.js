@@ -1,5 +1,5 @@
 'use client'
-import { Fugaz_One, Poppins } from 'next/font/google';
+import { Fugaz_One, Poppins, Space_Mono } from 'next/font/google';
 import React from 'react'
 import AboutusElement from './AboutusElement';
 import TeamMember from './TeamMember';
@@ -7,8 +7,9 @@ import OurAdvantages from './OurAdvantages';
 import { useAuth } from '@/context/AuthContext';
 
 
-const poppins = Poppins({ subsets: ["latin"], weight: ["700"] });
 const fugaz = Fugaz_One({ subsets: ["latin"], weight: ["400"] });
+const poppins = Poppins({ subsets: ["latin"], weight: ["700"] });
+const mono = Space_Mono({ subsets: ["latin"], weight: ["700"] });
 
 const uniSplash = "https://images.unsplash.com/"
 
@@ -62,11 +63,13 @@ export default function Aboutus() {
                   <p className={'text-red-500 text-lg '  + poppins.className}> {totalEmotions} </p>
                 </div> */}
 
-                <div className=' flex flex-col items-center border border-black p-4 min-w-[150px]'> 
-                  <h2 className='text-2xl text-indigo-500 '> {totalEmotions} </h2>
-                  <h3></h3>
-                  <h4></h4>
+                <div className=' flex flex-col gap-4 items-center px-4 py-8 min-w-[150px] totalStats '> 
+                <h2 className={'text-4xl text-purple-500 italic ' + mono.className}> {totalEmotions}0+</h2>
+                  <h3 className={'text-sm text-gray-500 ' + poppins.className}> Emotions Set </h3>
+                  <h4 className={'text-xs text-gray-500 '}> To Monitor Mood </h4>
                 </div>
+
+                
                 {/* <div className=' flex flex-col items-center border bg-white totalStatsTwo '>
                   <div className={'text-lg flex gap-2 p-2 items-center '  + poppins.className}> <p className='text-red-500 '> Total Feedback </p> <i className="fa-regular fa-comments text-xl "></i> </div> 
                   <p className={'text-red-500 text-lg '  + poppins.className}> {totalFeedback} </p>
