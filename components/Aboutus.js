@@ -47,18 +47,25 @@ export default function Aboutus() {
       </div>
 
         <section> 
-          <div className='border border-gray-200 flex flex-col items-center bg-indigo-200 min-w-[400px] '>  
+          <div className='border border-black flex flex-col items-center min-w-[400px] '>  
             
-            <h1 className={'text-xl textGradient p-4 ' + fugaz.className }> Stats section </h1> 
+            <h1 className={'text-sm text-blue-500 p-4 ' + fugaz.className }> Behind Our Project </h1> 
+            <h3 className={'text-xl p-4 pt-0 ' + poppins.className } > Moodcheck in numbers </h3>
             
-            <div className={'text-base flex flex-row gap-6 p-4 whitespace-nowrap '} >
+            <div className={'text-base flex flex-row gap-6 px-4 py-8 whitespace-nowrap '} >
                 <div className=' flex flex-col items-center border bg-white totalStats '>
                   <div className={' flex gap-2 p-2 items-center lg:text-lg md:text-base sm:text-sm '  + poppins.className}> <p className='text-red-500 '> Total Users </p> <i className="fa-solid fa-user text-xl "></i> </div> 
                   <p className={'text-red-500 text-lg '  + poppins.className}> {totalUsers} </p>
                 </div>
-                <div className=' flex flex-col items-center border  bg-white totalStatsOne '>
+                {/* <div className=' flex flex-col items-center border  bg-white totalStatsOne '>
                   <div className={' flex gap-2 p-2 items-center lg:text-lg md:text-base sm:text-sm '  + poppins.className}> <p className='text-red-500 '> Total Emotions </p> <i className="fa-solid fa-face-grin-stars text-xl "></i> </div> 
                   <p className={'text-red-500 text-lg '  + poppins.className}> {totalEmotions} </p>
+                </div> */}
+
+                <div className=' flex flex-col items-center border border-black p-4 min-w-[150px]'> 
+                  <h2 className='text-2xl text-indigo-500 '> {totalEmotions} </h2>
+                  <h3></h3>
+                  <h4></h4>
                 </div>
                 {/* <div className=' flex flex-col items-center border bg-white totalStatsTwo '>
                   <div className={'text-lg flex gap-2 p-2 items-center '  + poppins.className}> <p className='text-red-500 '> Total Feedback </p> <i className="fa-regular fa-comments text-xl "></i> </div> 
