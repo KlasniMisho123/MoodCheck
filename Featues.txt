@@ -20,7 +20,7 @@
 
 8** server deployment and endpoints? 
 
-11** WebStats Section Photos/logos /background format :responsive.
+11** WebStats Section :responsive.
 
 12** WebStats - Feedback Stats. 
 

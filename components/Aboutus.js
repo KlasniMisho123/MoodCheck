@@ -1,6 +1,6 @@
 'use client'
 import { Fugaz_One, Poppins, Space_Mono } from 'next/font/google';
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import AboutusElement from './AboutusElement';
 import TeamMember from './TeamMember';
 import OurAdvantages from './OurAdvantages';
@@ -35,10 +35,30 @@ const demoTeamMembers = [
 export default function Aboutus() {
   const {totalUsers, totalEmotions, totalFeedback } = useAuth()
 
-  const demoStatsElement = (<div className=' flex flex-col items-center border  bg-white totalStatsOne '>
-    <div className={' flex gap-2 p-2 items-center lg:text-lg md:text-base sm:text-sm '  + poppins.className}> <p className='text-red-500 '> Total Emotions </p> <i className="fa-solid fa-face-grin-stars text-xl "></i> </div> 
-    <p className={'text-red-500 text-lg '  + poppins.className}> {totalEmotions} </p>
-  </div> )
+  const [yearOfService, setYearOfService ] = useState(0)
+  const [timeOfService, setTimeOfService] = useState('')
+
+  function calculateSince() {
+    const start = new Date(2024, 9, 2); 
+    const currentDate = new Date();
+
+    const timeDifference = currentDate - start;
+
+    const daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24)); 
+    const yearsDifference = currentDate.getFullYear() - start.getFullYear(); 
+
+    if((daysDifference / 365) >= 1 ) {
+      setYearOfService(yearsDifference)
+      setTimeOfService("Years Of Service")
+    } else {
+      setYearOfService(daysDifference)
+      setTimeOfService("Days Of Service")
+    }
+  }
+
+  useEffect(() => {
+    calculateSince()
+  }, [yearOfService]);
 
 
   return (
@@ -63,8 +83,8 @@ export default function Aboutus() {
               
                 <div className=' flex flex-col gap-4 items-center px-4 py-8 min-w-[150px] totalStats '> 
                   <div className='border-1 border-blue-500  bg-blue-500 px-4 py-1 rounded-lg '> </div>   
-                  <h2 className={'text-4xl text-blue-500 italic ' + mono.className}> 1 </h2>
-                  <h3 className={'text-sm text-blue-400 ' + poppins.className}> Years of Service </h3>
+                  <h2 className={'text-4xl text-blue-500 italic ' + mono.className}> {yearOfService}+ </h2>
+                  <h3 className={'text-sm text-blue-400 ' + poppins.className} >{timeOfService} </h3>
                   <h4 className={'text-xs text-gray-600 '}> To Monitor Mood </h4>
                 </div>
 
