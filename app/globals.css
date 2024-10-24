@@ -107,13 +107,6 @@
   }
 }
 
-/* .aboutUsBackground {
-  background-image: url('/abUsBackground.jpg');
-  background-size: cover; 
-  background-position: center;  
-  background-repeat: no-repeat; 
-} */
-
 @keyframes slideDown{
   from {
     opacity: 0; 

@@ -57,27 +57,35 @@ export default function Aboutus() {
           <div className='border border-black flex flex-col items-center min-w-[400px] min-w-min '>  
             
             <h1 className={'text-sm text-blue-500 p-4 ' + fugaz.className }> Behind Our Project </h1> 
-            <h3 className={'text-xl p-4 pt-0 ' + poppins.className } > Moodcheck in numbers </h3>
+            <h3 className={'text-xl p-4 pt-0 ' + poppins.className } > <span className={' textGradient ' + fugaz.className}> Moodcheck</span> in numbers </h3>
             
             <div className={'text-base flex flex-row gap-4 px-4 py-8 whitespace-nowrap '} >
+              
                 <div className=' flex flex-col gap-4 items-center px-4 py-8 min-w-[150px] totalStats '> 
                   <h2 className={'text-4xl text-blue-500 italic ' + mono.className}> 1 </h2>
+                  <div className='border-1 border-blue-500  bg-blue-500 px-4 py-1 rounded-lg '> </div>
                   <h3 className={'text-sm text-gray-400 ' + poppins.className}> Years of Service </h3>
                   <h4 className={'text-xs text-gray-600 '}> To Monitor Mood </h4>
                 </div>
 
-                <div className=' flex flex-col gap-4 items-center px-4 py-8 min-w-[150px] totalStats '> 
+                <div className=' flex flex-col gap-4 items-center px-4 py-8 min-w-[150px] totalStatsOne '> 
                   <h2 className={'text-4xl text-purple-500 italic ' + mono.className}> {totalUsers}</h2>
+                  <div className='border-1 border-purple-500  bg-purple-500 px-4 py-1 rounded-lg '> </div>
                   <h3 className={'text-sm text-gray-400 ' + poppins.className}> Total Users </h3>
                   <h4 className={'text-xs text-gray-600 '}> For a Healthier Life </h4>
                 </div>
 
-                <div className=' flex flex-col gap-4 items-center px-4 py-8 min-w-[150px] totalStats '> 
+                <div className=' flex flex-col gap-4 items-center px-4 py-8 min-w-[150px] totalStatsTwo '> 
                   <h2 className={'text-4xl text-red-500 italic ' + mono.className}> {totalEmotions}</h2>
-                  <h3 className={'text-sm text-gray-400 ' + poppins.className}> Emotions Commmited </h3>
+                  <div className='border-1 border-red-500  bg-red-500 px-4 py-1 rounded-lg rotate '> </div>
+                  <h3 className={'text-sm text-gray-400 ' + poppins.className}>   Emotions Commmited  </h3>
                   <h4 className={'text-xs text-gray-600 '}> Connecting with Your Emotions </h4>
                 </div>
             </div>  
+                <div className='absolute flex flex-row items-center  justify-center '>
+                  
+                  
+                </div>
 
           </div> 
 
