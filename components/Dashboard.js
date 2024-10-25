@@ -1,5 +1,5 @@
 'use client'
-import { Fugaz_One } from 'next/font/google';
+import { Fugaz_One, Play, Playpen_Sans } from 'next/font/google';
 import React, { useEffect, useState } from 'react'
 import Calendar from './Calendar';
 import { useAuth } from '@/context/AuthContext';
@@ -15,11 +15,12 @@ dotenv.config();
 
 
 const fugaz = Fugaz_One({ subsets: ["latin"], weight: ["400"] });
+const playFont = Playpen_Sans({ subsets: ["latin"], weight: ["400"] });
 
 export default function Dashboard() {
   const { currentUser, userDataObj, setUserDataObj, loading } = useAuth()
   const [data, setData] = useState({})
-  const [joke, setJoke] = useState("Make Your Day Better")
+  const [joke, setJoke] = useState("")
   const now = new Date()
 
   function countValues() {
@@ -88,7 +89,7 @@ export default function Dashboard() {
           setJoke("No joke found.");
       }
   } catch (err) {
-      console.log("Error During Generating Joke: ", err.response.data); // Log the error response
+      console.log("Error During Generating Joke: ", err.response.data); 
       setJoke("Error fetching joke.");
   }
     
@@ -145,8 +146,9 @@ export default function Dashboard() {
         })}
       </div>
       <Calendar completeData={data} handleSetMood={handleSetMood} />
-      <div className='flex flex-col justify-center items-center py-4 gap-4 '>  
-        <h1> {joke} </h1>
+      <div className='flex flex-col justify-center items-center py-6 gap-4 bg-indigo-100 rounded-lg shadow '> 
+        <h1 className={'p-4 sm:text-lg md:text-xl ' + fugaz.className }> Make Your Day <span className='textGradient '> Better </span> </h1> 
+        <h1 className={'px-6 text-center ' + playFont.className }> {joke} </h1>
         <div></div>
         <Button 
         text="Generate Joke"
