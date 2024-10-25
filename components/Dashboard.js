@@ -7,12 +7,14 @@ import { doc, setDoc } from 'firebase/firestore';
 import { db } from '@/firebase';
 import Login from './Login';
 import Loading from './Loading';
+import Button from './Button';
 
 const fugaz = Fugaz_One({ subsets: ["latin"], weight: ["400"] });
 
 export default function Dashboard() {
   const { currentUser, userDataObj, setUserDataObj, loading } = useAuth()
   const [data, setData] = useState({})
+  const [joke, setJoke] = useState("Make Your Day Better")
   const now = new Date()
 
   function countValues() {
@@ -69,6 +71,9 @@ export default function Dashboard() {
     }
   }
 
+  async function getJoke() {
+    setJoke("")
+  }
 
   const moods = {
     '&*@#$': '😭',
@@ -120,6 +125,15 @@ export default function Dashboard() {
         })}
       </div>
       <Calendar completeData={data} handleSetMood={handleSetMood} />
+      <div className='flex flex-col justify-center items-center py-4 gap-4 '>  
+        <h1> {joke} </h1>
+        <div></div>
+        <Button 
+        text="Generate Joke"
+        dark 
+        clickHandler={getJoke}
+        />
+      </div>
     </div>
   )
 }
