@@ -13,7 +13,6 @@ export default function Login() {
   const [authenticating, setAuthenticating] = useState(false)
   const [errorResponseMessage, setErrorResponseMessage] = useState("")
   const [loginError, setLoginError] = useState("")
-  const [signUpError, setSignUpError] = useState("")
 
   const { signup, login } = useAuth()
 
@@ -21,6 +20,16 @@ export default function Login() {
 
     // late with single itteration
     if(!email || !password || password.length < 6) {
+      if (!email) {
+        setErrorResponseMessage("Email is required");
+        return;
+      }
+
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
+        setErrorResponseMessage("Invalid email format. Please enter a valid email with at least two characters after the period.");
+        return;
+      }
+      
       if(password.length < 6 ) {
         setErrorResponseMessage("Password should consist atleast 6 char")
       }
@@ -31,16 +40,10 @@ export default function Login() {
     try {
       if(isRegister) {
         console.log("signing up a new user")
-        // popup Message For Alraedy Used Emails - 5 sec
-        setLoginError("At Least 2 latters after .")
+        setLoginError("")
         await signup(email, password)
       } else {
         console.log("Logging in exsisting user")
-        if(loginError === "At Least 2 latters after .") {
-
-        } else {
-          setLoginError("")
-        }
         await login(email, password)
       } 
     } catch(err) {
