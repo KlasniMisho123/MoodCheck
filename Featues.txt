@@ -2,7 +2,6 @@
 
 1** fugaz one related error ?? -- BAGON
 
-4** Invalid Email During Reg 
 
 ---- User Experience Side ----
 
@@ -13,8 +12,6 @@
 ---- Features Side ----
 
 2** Mood sentence Feature.
-
-7** TOTAL USERS, TOTAL EMOTIONS. -- BAGON
 
 5** (Footer Links, Portfolio) 
 
