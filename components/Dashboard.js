@@ -8,6 +8,11 @@ import { db } from '@/firebase';
 import Login from './Login';
 import Loading from './Loading';
 import Button from './Button';
+import axios from "axios";
+import dotenv from 'dotenv';
+
+dotenv.config();
+
 
 const fugaz = Fugaz_One({ subsets: ["latin"], weight: ["400"] });
 
@@ -72,8 +77,23 @@ export default function Dashboard() {
   }
 
   async function getJoke() {
-    setJoke("")
+    try {
+      const generateJokeApi = await axios.get("https://api.api-ninjas.com/v1/jokes", {  
+          headers: { 'X-Api-Key': process.env.NEXT_PUBLIC_JOKE_API_KEY }
+      });
+
+      if (generateJokeApi.data && generateJokeApi.data.length > 0) {
+          setJoke(generateJokeApi.data[0].joke);
+      } else {
+          setJoke("No joke found.");
+      }
+  } catch (err) {
+      console.log("Error During Generating Joke: ", err.response.data); // Log the error response
+      setJoke("Error fetching joke.");
   }
+    
+  }
+
 
   const moods = {
     '&*@#$': '😭',
