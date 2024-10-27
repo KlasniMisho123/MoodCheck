@@ -46,7 +46,7 @@ export default function Footer() {
               </h4>
               <FooterLink text="Privacy Policy" link={'/'} />
               <FooterLink text="Firebase Integration" link={'https://firebase.google.com/'} />
-              <FooterLink text="FAQ" link={'/'} />
+              <FooterLink text="FAQ" link={'/error'} />
             </div>
 
             <div className='flex flex-col gap-3 '>
@@ -55,7 +55,7 @@ export default function Footer() {
               </h4>
               <FooterLink text="About Us" link={'/aboutus'} />
               <FooterLink text="Contact Us" link={'/contactus'} />
-              <FooterLink text="Support" link={''} />
+              <FooterLink text="Support" link={'/error'} />
             </div>
           </div>
         </div> 
