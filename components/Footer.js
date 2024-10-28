@@ -54,7 +54,7 @@ export default function Footer() {
               <div className='border border-black'/>
               </h4>
               <FooterLink text="About Us" link={'/aboutus'} />
-              <FooterLink text="Contact Us" link={'/contactus'} />
+              <FooterLink text="Contact Us" link={'/contactus'} />  
               <FooterLink text="Support" link={'/error'} />
             </div>
           </div>
