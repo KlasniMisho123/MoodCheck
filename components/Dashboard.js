@@ -21,6 +21,7 @@ export default function Dashboard() {
   const { currentUser, userDataObj, setUserDataObj, loading } = useAuth()
   const [data, setData] = useState({})
   const [joke, setJoke] = useState("")
+  const [moodSentence, setMoodSentence ] = useState('')
   const now = new Date()
 
   function countValues() {
@@ -37,6 +38,15 @@ export default function Dashboard() {
     }
     return { num_days: total_number_of_days, average_mood: (sum_moods / total_number_of_days).toFixed(2) }
   }
+
+
+  async function handleMoodSentence() {
+    try{
+      console.log(moodSentence)
+    } catch(err) {
+      console.log(err)
+    }
+  } 
 
   const statuses = {
     ...countValues(),
@@ -145,10 +155,22 @@ export default function Dashboard() {
           )
         })}
       </div>
+
       <div className='p-4 flex flex-row gap-6 '>
-        <input className='p-2 border-2 border-indigo-500 rounded-lg w-full max-w-[700px] text-center focus:outline-none ' placeholder='Sentance' />
-        <Button text='Submit' dark />
+        <input className='p-2 border-2 border-indigo-500 rounded-lg w-full max-w-[700px] focus:outline-none '
+         placeholder='Sentance'
+         value={moodSentence}
+         onChange={(e)=>{
+          setMoodSentence(e.target.value)
+         }}
+         />
+
+        <Button text='Submit'
+         dark 
+         clickHandler={handleMoodSentence}
+         />
       </div>
+      
       <Calendar completeData={data} handleSetMood={handleSetMood} />
       <div className='flex flex-col justify-center items-center py-6 gap-4 bg-indigo-100 rounded-lg shadow '> 
         <h1 className={'p-4 sm:text-lg md:text-xl ' + fugaz.className }> Make Your Day <span className='textGradient '> Better </span> </h1> 
