@@ -145,9 +145,9 @@ export default function Dashboard() {
           )
         })}
       </div>
-      <div className='bg-green-200 '>
-        <input placeholder='Sentance' />
-        <Button text='SMACK' />
+      <div className='p-4 flex flex-row gap-6 '>
+        <input className='p-2 border-2 border-indigo-500 rounded-lg w-full max-w-[700px] text-center focus:outline-none ' placeholder='Sentance' />
+        <Button text='Submit' dark />
       </div>
       <Calendar completeData={data} handleSetMood={handleSetMood} />
       <div className='flex flex-col justify-center items-center py-6 gap-4 bg-indigo-100 rounded-lg shadow '> 
