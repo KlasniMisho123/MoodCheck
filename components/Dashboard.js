@@ -145,6 +145,10 @@ export default function Dashboard() {
           )
         })}
       </div>
+      <div className='bg-green-200 '>
+        <input placeholder='Sentance' />
+        <Button text='SMACK' />
+      </div>
       <Calendar completeData={data} handleSetMood={handleSetMood} />
       <div className='flex flex-col justify-center items-center py-6 gap-4 bg-indigo-100 rounded-lg shadow '> 
         <h1 className={'p-4 sm:text-lg md:text-xl ' + fugaz.className }> Make Your Day <span className='textGradient '> Better </span> </h1> 
