@@ -139,8 +139,9 @@ export default function Calendar(props) {
                     (isToday ? " border-indigo-400 " : " border-indigo-100 ") + 
                     (color === "white" ? " text-indigo-400 " : " text-white ")} 
                     key={dayOfWeekIndex}>
-                      <p>{dayIndex} {sentenceExits ? "!" : " "} </p>
-                      </div>
+                      <p>{dayIndex} </p>
+                      {sentenceExits ? <i className="fa-solid fa-anchor hover:text-black mr-2 "></i> : " "}
+                    </div>
                   </button>
                 )
               })}
