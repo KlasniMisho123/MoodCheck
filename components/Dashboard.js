@@ -77,23 +77,43 @@ export default function Dashboard() {
     }
   }
 
-  async function handleMoodSentence() {
+  async function handleMoodSentence(moodSentence) {
     const day = now.getDate()
     const month = now.getMonth()
     const year = now.getFullYear()
 
     try{
-      const sentanceData = { ...moodSentence }
-      if(!sentanceData?.[year]) {
-        sentanceData[year] = {}
+
+      const sentenceData = { ...moodSentence }
+      if(!sentenceData?.[year]) {
+        sentenceData[year] = {}
       } 
-      if(!sentanceData?.[year]?.[month]) {
-        sentanceData[year][month] = {}
+      if(!sentenceData?.[year]?.[month]) {
+        sentenceData[year][month] = {}
       }
 
-    } catch(err) {
-      console.log(err)
+      sentenceData[year][month][day] = moodSentence
+
+      setData(sentenceData)
+
+      setUserDataObj(sentenceData)
+      
+      const docRef = doc(db, 'users', currentUser.uid)
+
+      const res = await setDoc(docRef, {
+        [year]: {
+          [month]: {
+            [day]:  {... {
+              [day]: moodSentence,
+            }}
+          }
+        }
+      }, { merge: true })
+
+    } catch (err) {
+      console.log('Failed to set data: ', err.message)
     }
+
   } 
 
 
@@ -168,7 +188,7 @@ export default function Dashboard() {
 
       <div className='p-4 flex flex-row gap-6 '>
         <input className='p-2 border-2 border-indigo-500 rounded-lg w-full max-w-[700px] focus:outline-none '
-         placeholder='Sentance'
+         placeholder='sentence'
          value={moodSentence}
          onChange={(e)=>{
           setMoodSentence(e.target.value)
