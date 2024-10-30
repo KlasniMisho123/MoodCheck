@@ -22,6 +22,7 @@ export default function Dashboard() {
   const [data, setData] = useState({})
   const [joke, setJoke] = useState("")
   const [moodSentence, setMoodSentence ] = useState('')
+  const [moodScale, setMoodScale] = useState("")
   const now = new Date()
 
   function countValues() {
@@ -45,6 +46,9 @@ export default function Dashboard() {
   }
   
   async function handleSetMood(mood) {
+
+    setMoodScale(mood)
+
     const day = now.getDate()
     const month = now.getMonth()
     const year = now.getFullYear()
@@ -68,7 +72,9 @@ export default function Dashboard() {
       const res = await setDoc(docRef, {
         [year]: {
           [month]: {
-            [day]: mood
+            [day]: {
+              "scale": mood,
+            }
           }
         }
       }, { merge: true })
@@ -77,44 +83,41 @@ export default function Dashboard() {
     }
   }
 
-  async function handleMoodSentence(moodSentence) {
+  async function handleMoodSentence() {
+
     const day = now.getDate()
     const month = now.getMonth()
     const year = now.getFullYear()
-
-    try{
-
-      const sentenceData = { ...moodSentence }
-      if(!sentenceData?.[year]) {
-        sentenceData[year] = {}
-      } 
-      if(!sentenceData?.[year]?.[month]) {
-        sentenceData[year][month] = {}
+     
+    try {
+      const newData = { ...userDataObj }
+      if (!newData?.[year]) {
+        newData[year] = {}
+      }
+      if (!newData?.[year]?.[month]) {
+        newData[year][month] = {}
       }
 
-      sentenceData[year][month][day] = moodSentence
+      newData[year][month][day] = moodScale
 
-      setData(sentenceData)
+      setData(newData)
 
-      setUserDataObj(sentenceData)
-      
+      setUserDataObj(newData)
+
       const docRef = doc(db, 'users', currentUser.uid)
-
       const res = await setDoc(docRef, {
         [year]: {
           [month]: {
-            [day]:  {... {
-              [day]: moodSentence,
-            }}
+            [day]: {
+              "desc": moodSentence
+            }
           }
         }
       }, { merge: true })
-
     } catch (err) {
       console.log('Failed to set data: ', err.message)
     }
-
-  } 
+  }
 
 
   async function getJoke() {
@@ -194,7 +197,6 @@ export default function Dashboard() {
           setMoodSentence(e.target.value)
          }}
          />
-
         <Button text='Submit'
          dark 
          clickHandler={handleMoodSentence}
