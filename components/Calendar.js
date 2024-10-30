@@ -109,8 +109,6 @@ export default function Calendar(props) {
 
                 let sentenceExits = data[dayIndex]?.desc ? true : false
 
-                console.log(dayIndex)
-
                 return(
                   <button onClick={() => {
                     setMoodDescActive(!moodDescActive)
