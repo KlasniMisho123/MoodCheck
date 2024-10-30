@@ -29,6 +29,7 @@ export default function Calendar(props) {
   const numericMonth = monthArr.indexOf(selectedMonth)
   const data = completeData?.[selectedYear]?.[numericMonth] || {}
 
+
   function handleIncrementMonth(val) {
     // value = +1 -1
     /*if we hit bounds of the months, \then we can just adjust year 
@@ -100,10 +101,10 @@ export default function Calendar(props) {
                 }
 
                 let color = demo ?
-                gradients.indigo[baseRating[dayIndex]] :
+                gradients.indigo[baseRating[dayIndex]]:
                 dayIndex in data ?
-                    gradients.indigo[data[dayIndex]] :
-                    'white'
+                 gradients.indigo[data[dayIndex].Scale]:
+                 'white';
 
                 return(
             //   too many rerenders??
@@ -136,15 +137,12 @@ export default function Calendar(props) {
 
       </div>
       {moodDescActive ? 
-      (
-      <div className='p-4 border border-gray rounded-lg '>
+      (<div className='p-4 border border-gray rounded-lg '>
           <div className={'flex flex-col justify-center items-center gap-8  ' + playFont.className}>
-          <h1 className='ml-4 ' > {selectedDay} </h1> 
-          <h2> What a Boring Day </h2>
+            <h1 className='ml-4 ' > {selectedDay} {selectedMonth} {selectedYear} </h1> 
+            <h2> What a Boring Day </h2>
           </div>
-      </div>
-      )
-      
+      </div>)
       : null}
     </div>
   )
