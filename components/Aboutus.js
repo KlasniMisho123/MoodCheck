@@ -98,7 +98,7 @@ export default function Aboutus() {
                 <div className=' flex flex-col gap-4 items-center px-4 py-8 min-w-[150px] totalStatsTwo '> 
                   <div className='border-1 border-red-500  bg-red-500 px-4 py-1 rounded-lg '> </div>
                   <h2 className={'text-4xl text-red-500 italic ' + mono.className}> {totalEmotions}</h2>
-                  <h3 className={'text-sm text-red-500 ' + poppins.className}>   Emotions Commmited  </h3>
+                  <h3 className={'text-sm text-red-500 ' + poppins.className}>   Mood Commits  </h3>
                   <h4 className={'text-xs text-gray-600 '}> Connecting with Your Emotions </h4>
                 </div>
             </div>  

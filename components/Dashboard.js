@@ -39,15 +39,6 @@ export default function Dashboard() {
     return { num_days: total_number_of_days, average_mood: (sum_moods / total_number_of_days).toFixed(2) }
   }
 
-
-  async function handleMoodSentence() {
-    try{
-      console.log(moodSentence)
-    } catch(err) {
-      console.log(err)
-    }
-  } 
-
   const statuses = {
     ...countValues(),
     time_remaining: `${23 - now.getHours()}H ${60 - now.getMinutes()}M`,
@@ -58,7 +49,6 @@ export default function Dashboard() {
     const month = now.getMonth()
     const year = now.getFullYear()
      
-    
     try {
       const newData = { ...userDataObj }
       if (!newData?.[year]) {
@@ -86,6 +76,26 @@ export default function Dashboard() {
       console.log('Failed to set data: ', err.message)
     }
   }
+
+  async function handleMoodSentence() {
+    const day = now.getDate()
+    const month = now.getMonth()
+    const year = now.getFullYear()
+
+    try{
+      const sentanceData = { ...moodSentence }
+      if(!sentanceData?.[year]) {
+        sentanceData[year] = {}
+      } 
+      if(!sentanceData?.[year]?.[month]) {
+        sentanceData[year][month] = {}
+      }
+
+    } catch(err) {
+      console.log(err)
+    }
+  } 
+
 
   async function getJoke() {
     try {
