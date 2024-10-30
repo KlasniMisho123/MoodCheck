@@ -22,6 +22,7 @@ export default function Calendar(props) {
   const currMonth = now.getMonth()
   const [selectedMonth, setSelectMonth] = useState(Object.keys(months)[currMonth])
   const [selectedYear, setSelectedYear] = useState(now.getFullYear())
+  const [selectedDay, setSelectedDay] = useState("")
   const [moodDescActive, setMoodDescActive] = useState(false)
   
   const numericMonth = monthArr.indexOf(selectedMonth)
@@ -44,7 +45,8 @@ export default function Calendar(props) {
     }
   }
 
-  function handleMoodDesc() {
+  function handleMoodDesc(day) {
+    setSelectedDay(day)
     setMoodDescActive(!moodDescActive)
   }
   
@@ -99,7 +101,12 @@ export default function Calendar(props) {
                     'white'
 
                 return(
-                  <button onClick={handleMoodDesc}>
+            //   too many rerenders??
+            //   <button onClick={handleMoodDesc(dayIndex)}>
+                  <button onClick={() => {
+                      setSelectedDay(dayIndex)
+                      setMoodDescActive(!moodDescActive)
+                  }}>
                     <div style={{background: color}} className={'text-xs sm:text-sm border  \
                       border-solid p-2 flex items-center gap-2 \
                     justify-between rounded-lg ' + 
@@ -116,7 +123,7 @@ export default function Calendar(props) {
         })}
 
       </div>
-      {moodDescActive ? <h1>SMASH</h1> : null}
+      {moodDescActive ? <h1> {selectedDay} </h1> : null}
     </div>
   )
 }
