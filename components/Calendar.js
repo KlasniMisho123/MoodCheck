@@ -22,6 +22,7 @@ export default function Calendar(props) {
   const currMonth = now.getMonth()
   const [selectedMonth, setSelectMonth] = useState(Object.keys(months)[currMonth])
   const [selectedYear, setSelectedYear] = useState(now.getFullYear())
+  const [moodDescActive, setMoodDescActive] = useState(false)
   
   const numericMonth = monthArr.indexOf(selectedMonth)
   const data = completeData?.[selectedYear]?.[numericMonth] || {}
@@ -44,7 +45,7 @@ export default function Calendar(props) {
   }
 
   function handleMoodDesc() {
-    
+    setMoodDescActive(!moodDescActive)
   }
   
   const monthNow = new Date(selectedYear, Object.keys(months).indexOf(selectedMonth), 1)
@@ -115,7 +116,7 @@ export default function Calendar(props) {
         })}
 
       </div>
-      {}
+      {moodDescActive ? <h1>SMASH</h1> : null}
     </div>
   )
 }
