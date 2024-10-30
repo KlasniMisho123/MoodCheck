@@ -103,7 +103,7 @@ export default function Calendar(props) {
                 let color = demo ?
                 gradients.indigo[baseRating[dayIndex]]:
                 dayIndex in data ?
-                 gradients.indigo[data[dayIndex].Scale]:
+                 gradients.indigo[data[dayIndex].scale]:
                  'white';
 
                 return(
