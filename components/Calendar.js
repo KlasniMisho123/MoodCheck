@@ -24,7 +24,7 @@ export default function Calendar(props) {
   const [selectedYear, setSelectedYear] = useState(now.getFullYear())
   const [selectedDay, setSelectedDay] = useState("")
   const [moodDescActive, setMoodDescActive] = useState(false)
-  
+
   const numericMonth = monthArr.indexOf(selectedMonth)
   const data = completeData?.[selectedYear]?.[numericMonth] || {}
 
@@ -46,8 +46,12 @@ export default function Calendar(props) {
   }
 
   function handleMoodDesc(day) {
+    if(selectedDay === day ) {
+      setMoodDescActive(!moodDescActive)
+    } else {
+      setMoodDescActive(moodDescActive)
+    }
     setSelectedDay(day)
-    setMoodDescActive(!moodDescActive)
   }
   
   const monthNow = new Date(selectedYear, Object.keys(months).indexOf(selectedMonth), 1)
@@ -104,8 +108,15 @@ export default function Calendar(props) {
             //   too many rerenders??
             //   <button onClick={handleMoodDesc(dayIndex)}>
                   <button onClick={() => {
-                      setSelectedDay(dayIndex)
+                    setMoodDescActive(!moodDescActive)
+                    setSelectedDay(dayIndex)
+                    
+                    if(selectedDay === dayIndex ) {
                       setMoodDescActive(!moodDescActive)
+                    } else {
+                      setMoodDescActive(true)
+                    }
+                    
                   }}>
                     <div style={{background: color}} className={'text-xs sm:text-sm border  \
                       border-solid p-2 flex items-center gap-2 \
@@ -123,7 +134,7 @@ export default function Calendar(props) {
         })}
 
       </div>
-      {moodDescActive ? <h1> {selectedDay} </h1> : null}
+      {moodDescActive ? <h1> {selectedDay}  </h1> : null}
     </div>
   )
 }
