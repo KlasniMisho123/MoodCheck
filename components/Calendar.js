@@ -24,6 +24,7 @@ export default function Calendar(props) {
   const [selectedMonth, setSelectMonth] = useState(Object.keys(months)[currMonth])
   const [selectedYear, setSelectedYear] = useState(now.getFullYear())
   const [selectedDay, setSelectedDay] = useState("")
+  const [selectedDateSentence, setSelectedDateSentence] = useState()
   const [moodDescActive, setMoodDescActive] = useState(false)
 
   const numericMonth = monthArr.indexOf(selectedMonth)
@@ -106,12 +107,24 @@ export default function Calendar(props) {
                  gradients.indigo[data[dayIndex].scale]:
                  'white';
 
+                let sentenceExits = data[dayIndex]?.desc ? true : false
+
+                console.log(dayIndex)
+
                 return(
-            //   too many rerenders??
-            //   <button onClick={handleMoodDesc(dayIndex)}>
                   <button onClick={() => {
                     setMoodDescActive(!moodDescActive)
                     setSelectedDay(dayIndex)
+                    
+                    if (data[dayIndex]) {
+                      if (data[dayIndex].desc) {
+                          setSelectedDateSentence(data[dayIndex].desc);
+                      } else {
+                          setSelectedDateSentence("");
+                      }
+                  } else {
+                      setSelectedDateSentence("");
+                  }
                     
                     if(selectedDay === dayIndex ) {
                       setMoodDescActive(!moodDescActive)
@@ -126,7 +139,7 @@ export default function Calendar(props) {
                     (isToday ? " border-indigo-400 " : " border-indigo-100 ") + 
                     (color === "white" ? " text-indigo-400 " : " text-white ")} 
                     key={dayOfWeekIndex}>
-                      <p> {dayIndex} </p> 
+                      <p>{dayIndex} {sentenceExits ? "!" : " "} </p>
                       </div>
                   </button>
                 )
@@ -140,7 +153,7 @@ export default function Calendar(props) {
       (<div className='p-4 border border-gray rounded-lg '>
           <div className={'flex flex-col justify-center items-center gap-8  ' + playFont.className}>
             <h1 className='ml-4 ' > {selectedDay} {selectedMonth} {selectedYear} </h1> 
-            <h2> What a Boring Day </h2>
+            <h2> {selectedDateSentence} </h2>
           </div>
       </div>)
       : null}
