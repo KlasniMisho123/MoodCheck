@@ -61,13 +61,12 @@ export default function Dashboard() {
       if (!newData?.[year]?.[month]) {
         newData[year][month] = {}
       }
-
       newData[year][month][day] = mood
-      // update the current state
+
       setData(newData)
-      // update the global state
+
       setUserDataObj(newData)
-      // update firebase
+
       const docRef = doc(db, 'users', currentUser.uid)
       const res = await setDoc(docRef, {
         [year]: {
@@ -78,6 +77,7 @@ export default function Dashboard() {
           }
         }
       }, { merge: true })
+      setMoodSentence("")
     } catch (err) {
       console.log('Failed to set data: ', err.message)
     }
@@ -117,6 +117,7 @@ export default function Dashboard() {
     } catch (err) {
       console.log('Failed to set data: ', err.message)
     }
+    setMoodSentence("")
   }
 
 
@@ -190,7 +191,7 @@ export default function Dashboard() {
       </div>
 
       <div className='p-4 flex flex-row gap-6 '>
-        <input className='p-2 border-2 border-indigo-500 rounded-lg w-full max-w-[700px] focus:outline-none '
+        <input className='p-2 border-2 border-indigo-500 rounded-lg w-full max-w-[700px] min-w-[150px] focus:outline-none '
          placeholder='sentence'
          value={moodSentence}
          onChange={(e)=>{

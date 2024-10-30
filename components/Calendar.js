@@ -42,6 +42,10 @@ export default function Calendar(props) {
       setSelectMonth(monthArr[numericMonth + val])
     }
   }
+
+  function handleMoodDesc() {
+    
+  }
   
   const monthNow = new Date(selectedYear, Object.keys(months).indexOf(selectedMonth), 1)
   const firstDayOfMonth = monthNow.getDay();
@@ -87,12 +91,6 @@ export default function Calendar(props) {
                   )
                 }
 
-                // let color = demo ? 
-                //   gradients.indigo[baseRating[dayIndex]] : 
-                //   (data && dayIndex in data) ?  // Check if 'data' is defined before using 'in'
-                //   gradients.indigo[data[dayIndex]] :
-                //   "white";
-
                 let color = demo ?
                 gradients.indigo[baseRating[dayIndex]] :
                 dayIndex in data ?
@@ -100,14 +98,16 @@ export default function Calendar(props) {
                     'white'
 
                 return(
-                  <div style={{background: color}} className={'text-xs sm:text-sm border  \
-                    border-solid p-2 flex items-center gap-2 \
-                  justify-between rounded-lg ' + 
-                  (isToday ? " border-indigo-400 " : " border-indigo-100 ") + 
-                  (color === "white" ? " text-indigo-400 " : " text-white ")} 
-                  key={dayOfWeekIndex}>
-                    <p> {dayIndex} </p>
-                    </div>
+                  <button onClick={handleMoodDesc}>
+                    <div style={{background: color}} className={'text-xs sm:text-sm border  \
+                      border-solid p-2 flex items-center gap-2 \
+                    justify-between rounded-lg ' + 
+                    (isToday ? " border-indigo-400 " : " border-indigo-100 ") + 
+                    (color === "white" ? " text-indigo-400 " : " text-white ")} 
+                    key={dayOfWeekIndex}>
+                      <p> {dayIndex} </p> 
+                      </div>
+                  </button>
                 )
               })}
             </div>
@@ -115,6 +115,7 @@ export default function Calendar(props) {
         })}
 
       </div>
+      {}
     </div>
   )
 }
