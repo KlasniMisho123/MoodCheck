@@ -1,6 +1,6 @@
 'use client'
 import { baseRating, gradients } from '@/utils';
-import { Fugaz_One } from 'next/font/google';
+import { Fugaz_One, Playpen_Sans } from 'next/font/google';
 import React, { useState } from 'react'
 
 
@@ -14,6 +14,7 @@ const dayList = ['Sunday', 'Monday', 'Tuesday', 'Wednesday',
   'Thursday', 'Friday', 'Saturday'];
 
 const fugaz = Fugaz_One({ subsets: ["latin"], weight: ["400"] });
+const playFont = Playpen_Sans({ subsets: ["latin"], weight: ["400"] });
 
 export default function Calendar(props) {
   const { demo, completeData, handleSetMood } = props
@@ -134,7 +135,17 @@ export default function Calendar(props) {
         })}
 
       </div>
-      {moodDescActive ? <h1> {selectedDay}  </h1> : null}
+      {moodDescActive ? 
+      (
+      <div className='p-4 border border-gray rounded-lg '>
+          <div className={'flex flex-col justify-center items-center gap-8  ' + playFont.className}>
+          <h1 className='ml-4 ' > {selectedDay} </h1> 
+          <h2> What a Boring Day </h2>
+          </div>
+      </div>
+      )
+      
+      : null}
     </div>
   )
 }
