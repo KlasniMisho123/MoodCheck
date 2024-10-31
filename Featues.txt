@@ -4,6 +4,8 @@
 
 2** on Sentence Submit - white Background ??
 
+3** QouteMonth/Year Change.
+
 ---- User Experience Side ----
 
 6** -- responsive -- (
