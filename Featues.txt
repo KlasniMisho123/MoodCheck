@@ -6,6 +6,8 @@
 
 3** QouteMonth/Year Change.
 
+4** Average Mood
+
 ---- User Experience Side ----
 
 6** -- responsive -- (

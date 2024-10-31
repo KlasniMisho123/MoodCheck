@@ -149,10 +149,10 @@ export default function Calendar(props) {
 
       </div>
       {moodDescActive ? 
-      (<div className='p-4 border border-gray rounded-lg '>
+      (<div className='p-4 border border-gray rounded-lg bg-gray-100 '>
           <div className={'flex flex-col justify-center items-center gap-8  ' + playFont.className}>
             <h1 className='ml-4 ' > {selectedDay} {selectedMonth} {selectedYear} </h1> 
-            <h2> {selectedDateSentence} </h2>
+            <h2 className='p-2 '> {selectedDateSentence} </h2>
           </div>
       </div>)
       : null}
