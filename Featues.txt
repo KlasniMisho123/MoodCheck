@@ -2,7 +2,7 @@
 
 1** fugaz one related error ?? -- BAGON
 
-2** on Sentence Submit - white Background ??
+2** on Sentence Submit - white Background - useffect ???
 
 3** QouteMonth/Year Change.
 
