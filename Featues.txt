@@ -16,9 +16,6 @@
 
 ---- Features Side ----
 
-2** Mood sentence Feature.
-
-5** (Footer Links, Portfolio) 
 
 8** server deployment and endpoints? 
 

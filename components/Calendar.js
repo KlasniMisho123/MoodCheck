@@ -26,6 +26,8 @@ export default function Calendar(props) {
   const [selectedDay, setSelectedDay] = useState("")
   const [selectedDateSentence, setSelectedDateSentence] = useState()
   const [moodDescActive, setMoodDescActive] = useState(false)
+  const [noteMonth, setNoteMonth] = useState("")
+  const [noteYear, setNoteYear] = useState("")
 
   const numericMonth = monthArr.indexOf(selectedMonth)
   const data = completeData?.[selectedYear]?.[numericMonth] || {}
@@ -113,7 +115,8 @@ export default function Calendar(props) {
                   <button onClick={() => {
                     setMoodDescActive(!moodDescActive)
                     setSelectedDay(dayIndex)
-                    
+                    setNoteMonth(selectedMonth)
+                    setNoteYear(selectedYear)
                     if (data[dayIndex]) {
                       if (data[dayIndex].desc) {
                           setSelectedDateSentence(data[dayIndex].desc);
@@ -151,7 +154,7 @@ export default function Calendar(props) {
       {moodDescActive ? 
       (<div className='p-4 border border-gray rounded-lg bg-gray-100 '>
           <div className={'flex flex-col justify-center items-center gap-8  ' + playFont.className}>
-            <h1 className='ml-4 ' > {selectedDay} {selectedMonth} {selectedYear} </h1> 
+            <h1 className='ml-4 ' > {selectedDay} {noteMonth} {noteYear} </h1> 
             <h2 className='p-2 '> {selectedDateSentence} </h2>
           </div>
       </div>)
