@@ -31,12 +31,13 @@ export default function Dashboard() {
     for (let year in data) {
       for (let month in data[year]) {
         for (let day in data[year][month]) {
-          let days_mood = data[year][month][day]
+          let days_mood = data[year][month][day]["scale"]
           total_number_of_days++
           sum_moods += days_mood
         }
       }
     }
+    console.log(sum_moods)
     return { num_days: total_number_of_days, average_mood: (sum_moods / total_number_of_days).toFixed(2) }
   }
 
