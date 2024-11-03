@@ -89,67 +89,57 @@ export default function Calendar(props) {
           return(
             <div key={rowIndex} className='grid grid-cols-7 gap-1'> 
               {dayList.map((dayOfWeek, dayOfWeekIndex) => {
-                let dayIndex = (rowIndex * 7) + 
-                dayOfWeekIndex - (firstDayOfMonth - 1)
-                
+                let dayIndex = (rowIndex * 7) + dayOfWeekIndex - (firstDayOfMonth - 1);
                 let dayDisplay = dayIndex > daysInMonth ? 
-                false : (row === 0 && dayOfWeekIndex < firstDayOfMonth) ? false : true
+                  false : (row === 0 && dayOfWeekIndex < firstDayOfMonth) ? false : true;
+                let isToday = dayIndex === now.getDate();
 
-                let isToday = dayIndex === now.getDate()
-                
-                if(!dayDisplay) {
+                if (!dayDisplay) {
                   return (
-                    <div className='bg-white' key={dayOfWeekIndex} />
-                  )
+                    <div className='bg-white' key={`${rowIndex}-${dayOfWeekIndex}`} />
+                  );
                 }
 
-                let color = demo ?
-                gradients.indigo[baseRating[dayIndex]]:
-                dayIndex in data ?
-                 gradients.indigo[data[dayIndex].scale]:
-                 'white';
+                let color = demo ? 
+                  gradients.indigo[baseRating[dayIndex]] : 
+                  dayIndex in data ? 
+                  gradients.indigo[data[dayIndex].scale] : 
+                  'white';
+                
+                let sentenceExits = data[dayIndex]?.desc ? true : false;
 
-                let sentenceExits = data[dayIndex]?.desc ? true : false
-
-                return(
-                  <button onClick={() => {
-                    setMoodDescActive(!moodDescActive)
-                    setSelectedDay(dayIndex)
-                    setNoteMonth(selectedMonth)
-                    setNoteYear(selectedYear)
-                    if (data[dayIndex]) {
-                      if (data[dayIndex].desc) {
-                          setSelectedDateSentence(data[dayIndex].desc);
+                return (
+                  <button 
+                    key={dayIndex} // Use `dayIndex` as the key here
+                    onClick={() => {
+                      setMoodDescActive(!moodDescActive);
+                      setSelectedDay(dayIndex);
+                      setNoteMonth(selectedMonth);
+                      setNoteYear(selectedYear);
+                      if (data[dayIndex]) {
+                        setSelectedDateSentence(data[dayIndex].desc || "");
                       } else {
-                          setSelectedDateSentence("");
+                        setSelectedDateSentence("");
                       }
-                  } else {
-                      setSelectedDateSentence("");
-                  }
-                    
-                    if(selectedDay === dayIndex ) {
-                      setMoodDescActive(!moodDescActive)
-                    } else {
-                      setMoodDescActive(true)
-                    }
-                    
-                  }}>
-                    <div style={{background: color}} className={'text-xs sm:text-sm border  \
-                      border-solid p-2 flex items-center gap-2 \
-                    justify-between rounded-lg ' + 
-                    (isToday ? " border-indigo-400 " : " border-indigo-100 ") + 
-                    (color === "white" ? " text-indigo-400 " : " text-white ")} 
-                    key={dayOfWeekIndex}>
-                      <p>{dayIndex} </p>
+                      setMoodDescActive(selectedDay === dayIndex ? !moodDescActive : true);
+                    }}
+                  >
+                    <div 
+                      style={{ background: color }} 
+                      className={'text-xs sm:text-sm border border-solid p-2 flex items-center gap-2 justify-between rounded-lg ' + 
+                        (isToday ? " border-indigo-400 " : " border-indigo-100 ") + 
+                        (color === "white" ? " text-indigo-400 " : " text-white ")
+                      }
+                    >
+                      <p>{dayIndex}</p>
                       {sentenceExits ? <i className="fa-solid fa-anchor hover:text-black mr-2 "></i> : " "}
                     </div>
                   </button>
-                )
+                );
               })}
             </div>
           )
         })}
-
       </div>
       {moodDescActive ? 
       (<div className='p-4 border border-gray rounded-lg bg-gray-100 '>

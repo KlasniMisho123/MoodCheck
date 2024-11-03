@@ -78,7 +78,6 @@ export default function Dashboard() {
           }
         }
       }, { merge: true })
-      setMoodSentence("")
     } catch (err) {
       console.log('Failed to set data: ', err.message)
     }
