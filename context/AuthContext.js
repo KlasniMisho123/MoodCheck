@@ -93,17 +93,13 @@ export function AuthProvider({ children }) {
                         }
                     });
                 });
-
                 setTotalEmotions(emotionCount);
-                
-    
             } catch (error) {
                 console.error("Error fetching user count: ", error);
             }
         }
-    
         fetchUserCount();
-    }, [totalUsers, totalEmotions, totalFeedback]);
+    }, [totalUsers, totalEmotions]);
     
 
     const value = {

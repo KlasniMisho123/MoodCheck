@@ -1,7 +1,7 @@
 'use client'
 import { baseRating, gradients } from '@/utils';
 import { Fugaz_One, Playpen_Sans } from 'next/font/google';
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 
 const months = { 'January': 'Jan', 'February': 'Feb', 'March': 
@@ -17,7 +17,7 @@ const fugaz = Fugaz_One({ subsets: ["latin"], weight: ["400"] });
 const playFont = Playpen_Sans({ subsets: ["latin"], weight: ["400"] });
 
 export default function Calendar(props) {
-  const { demo, completeData, handleSetMood } = props
+  const { demo, completeData, moodScale } = props
   
   const now = new Date()
   const currMonth = now.getMonth()
@@ -57,6 +57,12 @@ export default function Calendar(props) {
   const daysToDisplay = firstDayOfMonth + daysInMonth;
   const numRows = (Math.floor(daysToDisplay / 7 )) + (daysToDisplay % 7 ? 1 : 0)
   
+  // tofetch after submit
+  //  useEffect(()=> {
+  //   console.log("Database Changed")
+  // }, [moodScale])
+  
+
   return (
     <div className='flex flex-col gap-4'>
       <div className='grid grid-cols-5 gap-4'> 
@@ -84,6 +90,7 @@ export default function Calendar(props) {
                 let dayDisplay = dayIndex > daysInMonth ? 
                   false : (row === 0 && dayOfWeekIndex < firstDayOfMonth) ? false : true;
                 let isToday = dayIndex === now.getDate();
+
                 if (!dayDisplay) {
                   return (
                     <div className='bg-white' key={`${rowIndex}-${dayOfWeekIndex}`} />
@@ -93,7 +100,7 @@ export default function Calendar(props) {
                 let color = demo ? 
                   gradients.indigo[baseRating[dayIndex]] : 
                   dayIndex in data ? 
-                  gradients.indigo[data[dayIndex].scale] : 
+                  gradients.indigo[data[dayIndex]["scale"]] : 
                   'white';
                 
                 let sentenceExits = data[dayIndex]?.desc ? true : false;
