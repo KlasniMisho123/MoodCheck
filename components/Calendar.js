@@ -49,15 +49,6 @@ export default function Calendar(props) {
       setSelectMonth(monthArr[numericMonth + val])
     }
   }
-
-  function handleMoodDesc(day) {
-    if(selectedDay === day ) {
-      setMoodDescActive(!moodDescActive)
-    } else {
-      setMoodDescActive(moodDescActive)
-    }
-    setSelectedDay(day)
-  }
   
   const monthNow = new Date(selectedYear, Object.keys(months).indexOf(selectedMonth), 1)
   const firstDayOfMonth = monthNow.getDay();
@@ -93,7 +84,6 @@ export default function Calendar(props) {
                 let dayDisplay = dayIndex > daysInMonth ? 
                   false : (row === 0 && dayOfWeekIndex < firstDayOfMonth) ? false : true;
                 let isToday = dayIndex === now.getDate();
-
                 if (!dayDisplay) {
                   return (
                     <div className='bg-white' key={`${rowIndex}-${dayOfWeekIndex}`} />
@@ -110,7 +100,7 @@ export default function Calendar(props) {
 
                 return (
                   <button 
-                    key={dayIndex} // Use `dayIndex` as the key here
+                    key={dayIndex} 
                     onClick={() => {
                       setMoodDescActive(!moodDescActive);
                       setSelectedDay(dayIndex);
@@ -146,7 +136,6 @@ export default function Calendar(props) {
           <div className={'flex flex-col justify-center items-center gap-8  ' + playFont.className}>
             <h1 className='ml-4 ' > {selectedDay} {noteMonth} {noteYear} </h1> 
             <h2 className='p-2 '> {selectedDateSentence ? (selectedDateSentence
-
             ) : (
             <>
             No note for this day  <span className='text-2xl '> 🗅 </span> 

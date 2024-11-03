@@ -37,7 +37,6 @@ export default function Dashboard() {
         }
       }
     }
-    console.log(sum_moods)
     return { num_days: total_number_of_days, average_mood: (sum_moods / total_number_of_days).toFixed(2) }
   }
 
@@ -78,6 +77,7 @@ export default function Dashboard() {
           }
         }
       }, { merge: true })
+
     } catch (err) {
       console.log('Failed to set data: ', err.message)
     }
