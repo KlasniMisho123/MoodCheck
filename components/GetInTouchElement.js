@@ -13,7 +13,6 @@ export default function GetInTouchElement(props) {
      entryNumber === 2 ? "slideDownElementSecond " : 
      entryNumber === 3 ? "slideDownElementThird" :
       " "}`}>
-
         <div className='flex items-center justify-center w-16 h-16 py-5 bg-white rounded-full '>  {icon} </div>
         <h1 className={' ' + poppins.className }>{title}</h1>
         <div className='flex flex-col gap-6'>
