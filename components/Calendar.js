@@ -57,7 +57,7 @@ export default function Calendar(props) {
   const daysToDisplay = firstDayOfMonth + daysInMonth;
   const numRows = (Math.floor(daysToDisplay / 7 )) + (daysToDisplay % 7 ? 1 : 0)
   
-  // tofetch after submit
+  // to fetch after submit
   //  useEffect(()=> {
   //   console.log("Database Changed")
   // }, [moodScale])

@@ -61,7 +61,12 @@ export default function Dashboard() {
       if (!newData?.[year]?.[month]) {
         newData[year][month] = {}
       }
-      newData[year][month][day] = mood
+      newData[year][month][day] = 
+      { 
+        scale:mood,
+        desc: newData[year][month][day]?.desc || ""
+
+      }
 
       setData(newData)
 
@@ -98,7 +103,10 @@ export default function Dashboard() {
         newData[year][month] = {}
       }
 
-      newData[year][month][day] = moodScale
+      newData[year][month][day] = { 
+        scale: newData[year][month][day]?.scale || "",
+        desc: moodSentence
+      }
 
       setData(newData)
 
