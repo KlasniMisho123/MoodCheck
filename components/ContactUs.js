@@ -113,10 +113,14 @@ export default function ContactUs() {
 
         <h1 className={'my-[40px] sm:text-xl md:text-2xl lg:text-3xl text-center ' + fugaz.className} >
              We <span className='textGradient '> Value </span> Your Feedback 
-        <i className="fa-regular fa-comment-dots ml-2 textGradient"></i></h1>
+        <i className="fa-regular fa-comment-dots ml-4 textGradient"></i></h1>
 
-        <div className='w-full flex justify-center p-4 '>
+        <div className='w-full flex justify-center p-4 gap-2'>
             
+            <div className=' bg-green-400 border border-red-500 w-full-auto '>
+                <img src='https://i.pinimg.com/564x/4d/67/b0/4d67b085dfa9deb4595eda18e726c0c1.jpg' />
+            </div>
+
             <form onSubmit={handleContactSubmit} className='bg-indigo-100 flex flex-col items-center gap-4 p-6 h-[500px] w-[400px] rounded-lg border border-black '>
 
             <input className={'border border-black mt-4 rounded-sm p-[2px] ' + opensans.className }
