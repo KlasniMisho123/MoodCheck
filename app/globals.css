@@ -19,7 +19,9 @@
 
 .shadow {
   box-shadow: 3px 3px 1px 1px rgb(133, 132, 132);
+  transition: box-shadow 0.3s ease;
 }
+
 
 .footerLink {
   transition: transform 0.3s ease;

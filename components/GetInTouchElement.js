@@ -8,7 +8,7 @@ export default function GetInTouchElement(props) {
     const {title, icon, contentOne, contentTwo, entryNumber} = props
 
   return (
-    <div className={`p-4 flex flex-col gap-4 text-center items-center hover:shadow bg-indigo-400 rounded-lg ${
+    <div className={`p-4 flex flex-col gap-4 text-center items-center hover:shadow shadow bg-indigo-400 rounded-lg ${
      entryNumber === 1 ? "slideDownElementFirst " : 
      entryNumber === 2 ? "slideDownElementSecond " : 
      entryNumber === 3 ? "slideDownElementThird" :

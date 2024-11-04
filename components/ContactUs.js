@@ -116,9 +116,14 @@ export default function ContactUs() {
         <i className="fa-regular fa-comment-dots ml-4 textGradient"></i></h1>
 
         <div className='w-full flex justify-center p-4 gap-2'>
-            
-            <div className=' bg-green-400 border border-red-500 w-full-auto '>
-                <img src='https://i.pinimg.com/564x/4d/67/b0/4d67b085dfa9deb4595eda18e726c0c1.jpg' />
+        
+            <div className=' bg-indigo-200 border  rounded-lg w-full-auto '>
+                <h1 className="absolute z-10 place-text-center text-white "> From any part of the world</h1>
+                <img 
+                src="/globalMap.png" 
+                alt="Background Image"
+                className='object-cover '
+                />
             </div>
 
             <form onSubmit={handleContactSubmit} className='bg-indigo-100 flex flex-col items-center gap-4 p-6 h-[500px] w-[400px] rounded-lg border border-black '>
