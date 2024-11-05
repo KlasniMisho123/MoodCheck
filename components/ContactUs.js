@@ -117,8 +117,8 @@ export default function ContactUs() {
 
         <div className='w-full flex justify-center p-4 gap-2'>
         
-            <div className=' bg-indigo-200 border flex justify-center rounded-lg w-full-auto min-w-[400px] '>
-                <h1 className={"absolute z-10 place-text-center text-white mt-4 " + opensans.className }> <span className={'' + fugaz.className}> Contact us </span> from any part of the world</h1>
+            <div className=' bg-indigo-200 border border-gray flex justify-center rounded-lg w-full-auto min-w-[400px] '>
+                <h1 className={"absolute z-10 place-text-center text-white mt-4 " + opensans.className }> <span className={'' + fugaz.className}> Contact us </span> from any part of the world <i className="fa-solid fa-earth-americas text-lg ml-2 "></i> </h1>
                 <img 
                 src="/globalMap.png" 
                 alt="Background Image"
@@ -126,7 +126,7 @@ export default function ContactUs() {
                 />
             </div>
 
-            <form onSubmit={handleContactSubmit} className='bg-indigo-100 flex flex-col items-center gap-4 p-6 h-[500px] w-[400px] rounded-lg border border-black '>
+            <form onSubmit={handleContactSubmit} className='bg-indigo-200 flex flex-col items-center gap-4 p-6 h-[500px] w-[400px] rounded-lg border border-gray '>
 
             <input className={'border border-black mt-4 rounded-sm p-[2px] ' + opensans.className }
                 placeholder='Name'
