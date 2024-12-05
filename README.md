@@ -23,6 +23,7 @@ MoodCheck is a web application designed to help users monitor and track their mo
 
 [Try MoodCheck Now](https://mood-check.vercel.app/)
 
+---
 
 ## Setup Instructions 🖥️
 
