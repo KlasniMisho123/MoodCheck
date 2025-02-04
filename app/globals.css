@@ -97,22 +97,18 @@
   }
 }
 
-/* .earthSpin {
-  animation: earthRotation 15s linear infinite;
-  transform-origin: center;
+.theme-icon {
+  font-size: 25px;
+  
 }
 
-@keyframes verticalTilt {
-  0% {
-    transform: rotateY(0deg);
-  }
-  50% {
-    transform: rotateY(-60deg); 
-  }
-  100% {
-    transform: rotateY(0deg);
-  }
-} */
+.theme-icon.day {
+  color: #FFD523;
+}
+
+.theme-icon.night {
+  color: #3E497A;
+}
 
 @keyframes rollAround {
   0% {
