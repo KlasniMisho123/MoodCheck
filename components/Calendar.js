@@ -125,11 +125,11 @@ export default function Calendar(props) {
                       style={{ background: color }} 
                       className={'text-xs sm:text-sm border border-solid p-2 flex items-center gap-2 justify-between rounded-lg ' + 
                         (isToday ? " border-indigo-400 " : " border-indigo-100 ") + 
-                        (color === "white" ? " text-indigo-400 " : " text-white ")
+                        (color === "white" ? " text-indigo-400 " : " text-red-500 ")
                       }
                     >
                       <p>{dayIndex}</p>
-                      {sentenceExits ? <i className="fa-solid fa-anchor hover:text-black mr-2 "></i> : " "}
+                      {sentenceExits ? <i className="fa-solid fa-anchor hover:text-red-700 mr-2 "></i> : " "}
                     </div>
                   </button>
                 );
@@ -139,7 +139,7 @@ export default function Calendar(props) {
         })}
       </div>
       {moodDescActive ? 
-      (<div className='p-4 border border-gray rounded-lg bg-gray-100 '>
+      (<div className='p-4 border border-gray rounded-lg '>
           <div className={'flex flex-col justify-center items-center gap-8  ' + playFont.className}>
             <h1 className='ml-4 ' > {selectedDay} {noteMonth} {noteYear} </h1> 
             <h2 className='p-2 '> {selectedDateSentence ? (selectedDateSentence
