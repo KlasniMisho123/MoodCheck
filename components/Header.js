@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from "react";
 import Logout from "@/components/Logout";
 import Link from "next/link";
@@ -11,12 +11,23 @@ const poppins = Poppins({ subsets: ["latin"], weight: ["700"] });
 
 
 export default function Header() {
-    const [isDay, setIsDay] = useState(true)
+    const [isDay, setIsDay] = useState(() => {
+        return localStorage.getItem("theme") === "dark" ? false : true;
+    });
 
     function handleThemeChange() {
-        setIsDay(!isDay)
-        document.body.classList.toggle("dark-theme", !isDay);
+        const newTheme = !isDay;
+        setIsDay(newTheme);
+        localStorage.setItem("theme", newTheme ? "light" : "dark");
+        document.body.classList.toggle("dark-theme", !newTheme);
     }
+
+    useEffect(() => {
+        if (localStorage.getItem("theme") === "dark") {
+            document.body.classList.add("dark-theme");
+        }
+    }, []);
+
   return (
     <header className="p-4 sm:p-8 flex items-center justify-between gap-4">
     <Link href={'/'}>
