@@ -12,6 +12,11 @@ const poppins = Poppins({ subsets: ["latin"], weight: ["700"] });
 
 export default function Header() {
     const [isDay, setIsDay] = useState(true)
+
+    function handleThemeChange() {
+        setIsDay(!isDay)
+        document.body.classList.toggle("dark-theme", !isDay);
+    }
   return (
     <header className="p-4 sm:p-8 flex items-center justify-between gap-4">
     <Link href={'/'}>
@@ -29,11 +34,21 @@ export default function Header() {
           <p className={"text-indigo-500 text-base overflow-hidden whitespace-nowrap navSection " + fugaz.className }> About Us</p>
         </Link>
       </div>
-        <Logout /> 
-      <div>
-        <i className="fa-solid fa-sun theme-icon day"></i>
-        <i className="fa-solid fa-moon theme-icon night"></i>
-      </div>
+       
+      <button className='theme-btn'
+      onClick={()=>{
+        handleThemeChange()
+      }}
+      >
+        {isDay? 
+        (
+            <i className="fa-solid fa-sun theme-icon day"></i>
+        ):(
+            <i className="fa-solid fa-moon theme-icon night"></i>
+        )}
+        
+      </button>
+      <Logout /> 
     </div>
   </header>
   )

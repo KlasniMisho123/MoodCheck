@@ -93,7 +93,7 @@ export default function Calendar(props) {
 
                 if (!dayDisplay) {
                   return (
-                    <div className='bg-white' key={`${rowIndex}-${dayOfWeekIndex}`} />
+                    <div className='' key={`${rowIndex}-${dayOfWeekIndex}`} />
                   );
                 }
 

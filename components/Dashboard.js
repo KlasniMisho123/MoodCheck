@@ -212,7 +212,7 @@ export default function Dashboard() {
       </div>
       
       <Calendar completeData={data} handleSetMood={handleSetMood} moodScale={moodScale} />
-      <div className='flex flex-col justify-center items-center py-6 gap-4 bg-indigo-100 rounded-lg shadow '> 
+      <div className='flex flex-col justify-center items-center py-6 gap-4 bg-indigo-200 rounded-lg shadow '> 
         <h1 className={'p-4 sm:text-lg md:text-xl ' + fugaz.className }> Make Your Day <span className='textGradient '> Better </span> </h1> 
         <h1 className={'px-6 text-center ' + playFont.className }> {joke} </h1>
         <div></div>
