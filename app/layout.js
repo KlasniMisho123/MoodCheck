@@ -26,7 +26,10 @@ export default function RootLayout({ children }) {
         <h1 className={"text-base sm:text-lg textGradient " + fugaz.className}> MoodCheck </h1>
       </Link>
       <div className="flex flex-row items-center gap-4 ">
-        <div className="flex flex-row min-w-[300px] justify-evenly">
+        <div className="flex flex-row min-w-[300px] justify-evenly gap-4 ">
+          <Link href={'/dashboard'}>
+            <p className={"text-indigo-500 text-base overflow-hidden whitespace-nowrap navSection " + fugaz.className}> Dashboard </p>
+          </Link>
           <Link href={'/contactus'}>
             <p className={"text-indigo-500 text-base overflow-hidden whitespace-nowrap navSection " + fugaz.className}> Contact Us</p>
           </Link>
