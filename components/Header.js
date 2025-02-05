@@ -1,4 +1,5 @@
 'use client'
+import useLocalStorage from './customHooks/useLocalStorage';
 import React, { useEffect } from 'react'
 import { useState } from "react";
 import Logout from "@/components/Logout";
@@ -11,22 +12,21 @@ const poppins = Poppins({ subsets: ["latin"], weight: ["700"] });
 
 
 export default function Header() {
-    const [isDay, setIsDay] = useState(() => {
-        return localStorage.getItem("theme") === "dark" ? false : true;
-    });
+  const [isDay, setIsDay] = useLocalStorage("theme", true);
 
-    function handleThemeChange() {
-        const newTheme = !isDay;
-        setIsDay(newTheme);
-        localStorage.setItem("theme", newTheme ? "light" : "dark");
-        document.body.classList.toggle("dark-theme", !newTheme);
+  function handleThemeChange() {
+    const newTheme = !isDay;
+    setIsDay(newTheme);
+    document.body.classList.toggle("dark-theme", !newTheme);
+}
+
+useEffect(() => {
+    if (!isDay) {
+        document.body.classList.add("dark-theme");
+    } else {
+        document.body.classList.remove("dark-theme");
     }
-
-    useEffect(() => {
-        if (localStorage.getItem("theme") === "dark") {
-            document.body.classList.add("dark-theme");
-        }
-    }, []);
+}, [isDay]);
 
   return (
     <header className="p-4 sm:p-8 flex items-center justify-between gap-4">
