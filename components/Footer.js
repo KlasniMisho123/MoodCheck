@@ -24,7 +24,7 @@ export default function Footer() {
           <Link href={'/'}>
             <h1 className={"text-base sm:text-lg textGradient " + fugaz.className}> MoodCheck </h1>
           </Link>
-          {isSmallScreen ? <p>📱 Mobile View</p> : <p>💻 Desktop View</p>}
+          {isSmallScreen ? <p className='text-black'>📱 Mobile View</p> : <p className='text-black' >💻 Desktop View</p>}
           </div>
           <p className="text-sm break-words text-gray-500 text-xs md:text-base lg:text-base">
             An intuitive web platform that allows you to effortlessly monitor and reflect on your moods and daily experience.
