@@ -34,10 +34,9 @@ const demoTeamMembers = [
 
 export default function Aboutus() {
   const {totalUsers, totalEmotions, totalFeedback } = useAuth()
-
   const [yearOfService, setYearOfService ] = useState(0)
   const [timeOfService, setTimeOfService] = useState('')
-
+  
   function calculateSince() {
     const start = new Date(2024, 9, 2); 
     const currentDate = new Date();
@@ -85,21 +84,21 @@ export default function Aboutus() {
                   <div className='border-1 border-blue-500  bg-blue-500 px-4 py-1 rounded-lg '> </div>   
                   <h2 className={'text-4xl text-blue-500 italic ' + mono.className}> {yearOfService}+ </h2>
                   <h3 className={'text-sm text-blue-400 ' + poppins.className} >{timeOfService} </h3>
-                  <h4 className={'text-xs text-gray-600 '}> To Monitor Mood </h4>
+                  <h4 className={'text-xs '}> To Monitor Mood </h4>
                 </div>
 
                 <div className=' flex flex-col gap-4 items-center px-4 py-8 min-w-[150px] totalStatsOne '>
                   <div className='border-1 border-purple-500  bg-purple-500 px-4 py-1 rounded-lg '> </div>
                   <h2 className={'text-4xl text-purple-500 italic ' + mono.className}> {totalUsers}</h2>
                   <h3 className={'text-sm text-purple-500 ' + poppins.className}> Total Users </h3>
-                  <h4 className={'text-xs text-gray-600 '}> For a Healthier Life </h4>
+                  <h4 className={'text-xs '}> For a Healthier Life </h4>
                 </div>
 
                 <div className=' flex flex-col gap-4 items-center px-4 py-8 min-w-[150px] totalStatsTwo '> 
                   <div className='border-1 border-red-500  bg-red-500 px-4 py-1 rounded-lg '> </div>
                   <h2 className={'text-4xl text-red-500 italic ' + mono.className}> {totalEmotions}</h2>
                   <h3 className={'text-sm text-red-500 ' + poppins.className}>   Mood Commits  </h3>
-                  <h4 className={'text-xs text-gray-600 '}> Connecting with Your Emotions </h4>
+                  <h4 className={'text-xs '}> Connecting with Your Emotions </h4>
                 </div>
             </div>  
 
