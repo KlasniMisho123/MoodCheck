@@ -198,7 +198,7 @@ export default function Dashboard() {
       </div>
 
       <div className='p-4 flex flex-row gap-6 '>
-        <input className='p-2 border-2 border-indigo-500 rounded-lg w-full max-w-[700px] min-w-[150px] focus:outline-none '
+        <input className='p-2 border-2 border-indigo-500 rounded-lg w-full max-w-[700px] min-w-[150px] text-black focus:outline-none '
          placeholder='sentence'
          value={moodSentence}
          onChange={(e)=>{
