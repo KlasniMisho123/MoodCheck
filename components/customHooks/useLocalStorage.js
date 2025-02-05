@@ -7,7 +7,7 @@ function getSavedValue(key, initialValue) {
     if (savedValue !== null) {
         if (savedValue === "true") return true;
         if (savedValue === "false") return false;
-        return savedValue; 
+        return savedValue;
     }
 
     if (initialValue instanceof Function) return initialValue();
@@ -15,7 +15,12 @@ function getSavedValue(key, initialValue) {
 }
 
 export default function useLocalStorage(key, initialValue) {
-    const [value, setValue] = useState(() => getSavedValue(key, initialValue));
+    const [value, setValue] = useState(() => {
+        if (typeof window !== "undefined") {
+            return getSavedValue(key, initialValue);
+        }
+        return initialValue;
+    });
 
     useEffect(() => {
         if (typeof window !== "undefined") {
