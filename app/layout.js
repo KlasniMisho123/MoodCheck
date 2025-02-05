@@ -18,7 +18,6 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-
   const header = (
     <Header />
   )
@@ -34,7 +33,7 @@ export default function RootLayout({ children }) {
         <body
           className={` w-full max-w-[1000px] mx-auto text-sm sm:text-base min-h-screen flex flex-col text-slate-800 ${opensans.className} antialiased`}
         >
-          {header} 
+          {header}
           {children}
           {footer}
         </body>
