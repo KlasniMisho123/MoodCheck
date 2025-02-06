@@ -36,7 +36,7 @@ export default function Aboutus() {
   const {totalUsers, totalEmotions, totalFeedback } = useAuth()
   const [yearOfService, setYearOfService ] = useState(0)
   const [timeOfService, setTimeOfService] = useState('')
-  
+
   function calculateSince() {
     const start = new Date(2024, 9, 2); 
     const currentDate = new Date();
