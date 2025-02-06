@@ -128,7 +128,7 @@ export default function ContactUs() {
 
             <form onSubmit={handleContactSubmit} className='bg-indigo-200 flex flex-col items-center gap-4 p-6 h-[500px] w-[400px] rounded-lg border border-gray '>
 
-            <input className={'border border-black mt-4 rounded-sm p-[2px] ' + opensans.className }
+            <input className={'border border-black mt-4 rounded-sm p-[2px] text-black ' + opensans.className }
                 placeholder='Name'
                 type='text' 
                 value={contactName}
@@ -139,7 +139,7 @@ export default function ContactUs() {
 
                 { contactError ?  
                     (<div className='flex flex-col border-l-4 border-red-500 '>
-                        <input className={'border border-0 rounded-sm p-[2px] focus:outline-none ' + opensans.className }
+                        <input className={'border border-0 rounded-sm p-[2px] focus:outline-none text-black ' + opensans.className }
                         placeholder='Email'
                         required
                         type='text' 
@@ -151,7 +151,7 @@ export default function ContactUs() {
                         <InputError errorText="Invalid Email" /> 
                     </div>)
                 :   (<div className='flex flex-col '>
-                        <input className={'border border-black rounded-sm p-[2px] ' + opensans.className }
+                        <input className={'border border-black rounded-sm p-[2px] text-black ' + opensans.className }
                         placeholder='Email'
                         required
                         type='text' 
@@ -164,7 +164,7 @@ export default function ContactUs() {
                          }
 
                 <select
-                    className={"border border-black px-6 py-1 rounded-sm " + opensans.className}
+                    className={"border border-black px-6 py-1 rounded-sm text-black " + opensans.className}
                     value={contactSubject}
                     required
                     onChange={(e) => {
@@ -179,7 +179,7 @@ export default function ContactUs() {
                     <option value="other">Other</option>
                 </select>
 
-                <textarea className={'border border-black max-h-[215px] min-h-[30px] rounded-sm ' + opensans.className }
+                <textarea className={'border border-black max-h-[215px] min-h-[30px] rounded-sm text-black ' + opensans.className }
                 placeholder='Context ' 
                 required
                 value={contactText}

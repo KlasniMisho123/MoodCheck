@@ -55,8 +55,7 @@ useEffect(() => {
             <i className="fa-solid fa-sun theme-icon day"></i>
         ):(
             <i className="fa-solid fa-moon theme-icon night"></i>
-        )}
-        
+        )}   
       </button>
       <Logout /> 
     </div>
