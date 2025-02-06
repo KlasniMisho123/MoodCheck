@@ -10,7 +10,7 @@ export default function TeamMember(props) {
     const [hoverRef, isHovered] = useHover();
 
   return (
-    <div className={`flex flex-col gap-4 transition-all duration-300 ${isHovered ? " scale-105" : "bg-white"}`}
+    <div className={`flex flex-col gap-4 transition-all duration-300 ${isHovered ? " scale-105" : ""}`}
     ref={hoverRef}> 
         <h1 className={'text-center p-2 text-lg whitespace-nowrap ' + fugaz.className } > {name}</h1>
         <img src={imgSrc} className='w-[200px] h-[200px] object-cover ' />
