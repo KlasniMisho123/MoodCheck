@@ -1,19 +1,28 @@
 import { useState, useEffect } from "react";
 
 export default function useLocalStorage(key, initialValue) {
-    const [value, setValue] = useState(() => {
-        if (typeof window !== "undefined") {
-            const savedValue = localStorage.getItem(key);
-            return savedValue !== null ? JSON.parse(savedValue) : initialValue;
-        }
-        return initialValue;
-    });
+    const [value, setValue] = useState(initialValue);
+    const [isClient, setIsClient] = useState(false);
+
+    // Ensure this runs only on the client
+    useEffect(() => {
+        setIsClient(true);
+    }, []);
 
     useEffect(() => {
-        if (typeof window !== "undefined") {
+        if (isClient) {
+            const savedValue = localStorage.getItem(key);
+            if (savedValue !== null) {
+                setValue(JSON.parse(savedValue));
+            }
+        }
+    }, [isClient, key]);
+
+    useEffect(() => {
+        if (isClient) {
             localStorage.setItem(key, JSON.stringify(value));
         }
-    }, [key, value]);
+    }, [isClient, key, value]);
 
     return [value, setValue];
 }
