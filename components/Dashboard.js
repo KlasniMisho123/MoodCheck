@@ -10,6 +10,7 @@ import Loading from './Loading';
 import Button from './Button';
 import axios from "axios";
 import dotenv from 'dotenv';
+import useGetJoke from "components/customHooks/useGetJoke";
 
 dotenv.config();
 
@@ -18,9 +19,9 @@ const fugaz = Fugaz_One({ subsets: ["latin"], weight: ["400"] });
 const playFont = Playpen_Sans({ subsets: ["latin"], weight: ["400"] });
 
 export default function Dashboard() {
+  const { joke, jokeLoading, error, fetchJoke } = useGetJoke();
   const { currentUser, userDataObj, setUserDataObj, loading } = useAuth()
   const [data, setData] = useState({})
-  const [joke, setJoke] = useState("")
   const [moodSentence, setMoodSentence ] = useState('')
   const [moodScale, setMoodScale] = useState("")
   const now = new Date()
@@ -219,7 +220,7 @@ export default function Dashboard() {
         <Button 
         text="Generate Joke"
         dark 
-        clickHandler={getJoke}
+        clickHandler={fetchJoke}
         />
       </div>
     </div>

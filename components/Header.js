@@ -1,7 +1,6 @@
 'use client'
 import useLocalStorage from './customHooks/useLocalStorage';
 import React, { useEffect } from 'react'
-import { useState } from "react";
 import Logout from "@/components/Logout";
 import Link from "next/link";
 import { Fugaz_One, Open_Sans, Poppins } from 'next/font/google';

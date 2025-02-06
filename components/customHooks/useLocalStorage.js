@@ -4,7 +4,6 @@ export default function useLocalStorage(key, initialValue) {
     const [value, setValue] = useState(initialValue);
     const [isClient, setIsClient] = useState(false);
 
-    // Ensure this runs only on the client
     useEffect(() => {
         setIsClient(true);
     }, []);

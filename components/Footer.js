@@ -6,14 +6,14 @@ import Link from 'next/link';
 import FooterLink from './FooterLink';
 import { usePathname } from 'next/navigation';
 import ContactUsElement from './ContactUsElement';
-import useMediaQuery from "@/components/customHooks/useMediaQuery";
+// import useMediaQuery from "@/components/customHooks/useMediaQuery";
 
 const fugaz = Fugaz_One({ subsets: ["latin"], weight: ["400"] });
 
 export default function Footer() {
   const pathname = usePathname();
   const currentYear = new Date().getFullYear();
-  const isSmallScreen = useMediaQuery("(max-width: 768px)");
+  // const isSmallScreen = useMediaQuery("(max-width: 768px)");
 
   return (
     <footer className={`${pathname !== "/contactus" ? "pt-4 gap-6 sm:pt-8 grid  " : "null"} place-items-center border min-w-min `}>
@@ -24,7 +24,7 @@ export default function Footer() {
           <Link href={'/'}>
             <h1 className={"text-base sm:text-lg textGradient " + fugaz.className}> MoodCheck </h1>
           </Link>
-          {isSmallScreen ? <p className='text-black'>📱 Mobile View</p> : <p className='text-black' >💻 Desktop View</p>}
+          {/* {isSmallScreen ? <p className='text-black'>📱 Mobile View</p> : <p className='text-black' >💻 Desktop View</p>} */}
           </div>
           <p className="text-sm break-words text-gray-500 text-xs md:text-base lg:text-base">
             An intuitive web platform that allows you to effortlessly monitor and reflect on your moods and daily experience.
